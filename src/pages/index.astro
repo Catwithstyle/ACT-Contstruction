@@ -1,7 +1,6 @@
 ---
 import Layout from "../layouts/Layout.astro";
 import Card from "../components/Card.astro";
-import HelmetIcon from "../components/HelmetIcon.astro"; // Importa el componente Icon
 ---
 
 <Layout title="Welcome">
@@ -44,17 +43,18 @@ import HelmetIcon from "../components/HelmetIcon.astro"; // Importa el component
       <!-- Cards -->
       <div class="relative z-50">
         <Card 
+          icon="helm"
           header1="Act Construction y water solutions" 
-          icon={HelmetIcon} 
-          title="Construction Projects"
-          subTitle="Our expertise"
-          paragraph="We specialize in water solutions and construction projects."
+          title="transform your land"
+          subTitle="We lay the foundation for your next dream."
+          title2="Experts in excavation and water solutions"
+          paragraph="With over 10 years of experience, we provide top-quality excavation, demolition, trenching, land clearing, and water delivery services throughout Hawaii.ith over 10 years of experience, we provide high-quality excavation, demolition, trenching, land clearing, and water delivery services across Hawaii."
           link="/projects"
         />
       </div>
 
       <!-- Video de fondo -->
-      <div class="absolute top-0 left-0 w-full h-full z-10">
+      <div class="absolute top-0 left-0 w-full h-full z-10 ">
         <video
           class="w-full h-full object-cover"
           autoplay
