@@ -1,7 +1,7 @@
 ---
 import { Icon } from 'astro-icon/components';
 
-const { header1, icon, title, title2,subTitle, paragraph, link } = Astro.props;
+const { header1, icon, title, title2,subTitle, paragraph, link,tipo } = Astro.props;
 ---
 
 <div class="max-w-sm bg-white rounded-2xl shadow-md overflow-hidden border border-gray-200">
@@ -14,6 +14,7 @@ const { header1, icon, title, title2,subTitle, paragraph, link } = Astro.props;
     )}
 
     <!-- Contenido -->
+     {tipo === "simple"&& (
     <div class="p-4">
         <h3 class="text-lg font-bold text-black uppercase">{header1}</h3> 
         <h2 class="text-xl font-bold text-black">{title}</h2> 
@@ -28,4 +29,35 @@ const { header1, icon, title, title2,subTitle, paragraph, link } = Astro.props;
             </a>
         )}
     </div>
+    )}
+    {tipo === "formulario" && (
+    <form class="mt-4">
+        <!-- Campo de Nombre -->
+        <label class="block mb-2" for="name">Nombre</label>
+        <input type="text" id="name" class="border p-2 mb-4 w-full" placeholder="Escribe tu nombre" />
+
+        <!-- Campo de Email -->
+        <label class="block mb-2" for="email">Email</label>
+        <input type="email" id="email" class="border p-2 mb-4 w-full" placeholder="Escribe tu email" />
+
+        <!-- Campo de Teléfono -->
+        <label class="block mb-2" for="telefono">Teléfono</label>
+        <input type="tel" id="telefono" class="border p-2 mb-4 w-full" placeholder="Escribe tu teléfono" />
+
+        <!-- Campo de Tipo de Proyecto con Lista Desplegable -->
+        <label class="block mb-2" for="proyecto">Tipo de Proyecto</label>
+        <select id="proyecto" class="border p-2 mb-4 w-full">
+            <option value="">Selecciona un tipo de proyecto</option>
+            <option value="web">Desarrollo Web</option>
+            <option value="app">Desarrollo de Aplicaciones</option>
+            <option value="ux">Diseño UX/UI</option>
+            <option value="marketing">Marketing Digital</option>
+        </select>
+
+        <!-- Botón de Enviar -->
+        <button type="submit" class="bg-yellow-500 text-white p-2 rounded w-full">
+            Schedule it now.
+        </button>
+    </form>
+)}
 </div>
