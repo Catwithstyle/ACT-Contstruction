@@ -4,7 +4,7 @@ import { Icon } from 'astro-icon/components';
 const { header1, icon, title, title2,subTitle, paragraph, link,tipo } = Astro.props;
 ---
 
-<div class="max-w-sm bg-white rounded-2xl shadow-md overflow-hidden border border-gray-200">
+<div class="max-w-sm bg-white rounded-2xl  mx-auto overflow-hidden  border-gray-200  flex flex-col items-center   ">
     <!-- Icono -->
     {icon && (
          <div class="text-3xl  py-4">
@@ -30,34 +30,46 @@ const { header1, icon, title, title2,subTitle, paragraph, link,tipo } = Astro.pr
         )}
     </div>
     )}
-    {tipo === "formulario" && (
-    <form class="mt-4">
-        <!-- Campo de Nombre -->
-        <label class="block mb-2" for="name">Nombre</label>
-        <input type="text" id="name" class="border p-2 mb-4 w-full" placeholder="Escribe tu nombre" />
+   {tipo === "formulario" && (
+   <div class="bg-white p-8  w-[500px] max-w-[90%] flex flex-col items-center pt-2">
+     <header class=" text-center">
+       <h1 class="text-lg font-bold text-black uppercase">Schedule your free evaluation</h1>
+       <h2 class="text-[10px] font-thin text-black text-justify mt-2">
+         Complete this form and our team will contact you to schedule a free on-site evaluation of your project
+       </h2>
+     </header>
+ 
+     <form class="mt-4 ">
+       <!-- Campo de Nombre -->
+       <label class="block mb-2 w-full text-left text-xs font-bold " for="name">Name</label>
+       <input type="text" id="name" class="border p-1 mb-4 w-full placeholder:text-sm" placeholder="Escribe tu nombre" />
+ 
+       <!-- Campo de Email -->
+       <label class="block mb-2 w-full text-left font-bold text-xs " for="email">Email</label>
+       <input type="email" id="email" class="border p-1 mb-4 w-full placeholder:text-sm" placeholder="Escribe tu email" />
+ 
+       <!-- Campo de Teléfono -->
+       <label class="block mb-2 w-full text-left font-bold text-xs" for="telefono">Phone</label>
+       <input type="tel" id="telefono" class="border p-1 mb-4 w-full placeholder:text-sm" placeholder="Escribe tu teléfono" />
+ 
+       <!-- Campo de Tipo de Proyecto con Lista Desplegable -->
+       <label class="block mb-2 w-full text-left font-bold" for="proyecto">Tipo de Proyecto</label>
+       <select id="proyecto" class="border p-1 mb-4 w-full">
+         <option value="">Selecciona un tipo de proyecto</option>
+         <option value="web">Desarrollo Web</option>
+         <option value="app">Desarrollo de Aplicaciones</option>
+         <option value="ux">Diseño UX/UI</option>
+         <option value="marketing">Marketing Digital</option>
+       </select>
+ 
+       <!-- Botón de Enviar -->
+       <button type="submit" class="bg-yellow-500 text-white p-3 rounded w-full font-bold">
+         Schedule it now.
+       </button>
+     </form>
+   </div>
+ )}
+ 
 
-        <!-- Campo de Email -->
-        <label class="block mb-2" for="email">Email</label>
-        <input type="email" id="email" class="border p-2 mb-4 w-full" placeholder="Escribe tu email" />
 
-        <!-- Campo de Teléfono -->
-        <label class="block mb-2" for="telefono">Teléfono</label>
-        <input type="tel" id="telefono" class="border p-2 mb-4 w-full" placeholder="Escribe tu teléfono" />
-
-        <!-- Campo de Tipo de Proyecto con Lista Desplegable -->
-        <label class="block mb-2" for="proyecto">Tipo de Proyecto</label>
-        <select id="proyecto" class="border p-2 mb-4 w-full">
-            <option value="">Selecciona un tipo de proyecto</option>
-            <option value="web">Desarrollo Web</option>
-            <option value="app">Desarrollo de Aplicaciones</option>
-            <option value="ux">Diseño UX/UI</option>
-            <option value="marketing">Marketing Digital</option>
-        </select>
-
-        <!-- Botón de Enviar -->
-        <button type="submit" class="bg-yellow-500 text-white p-2 rounded w-full">
-            Schedule it now.
-        </button>
-    </form>
-)}
 </div>
