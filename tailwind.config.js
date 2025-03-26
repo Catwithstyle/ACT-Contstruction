@@ -3,7 +3,8 @@ export default {
   content: ["./src/**/*.{astro,html,js,ts}"], // Asegúrate de que incluya archivos .astro
   theme: {
     fontFamily:{
-      sans: ['Gotham SSm A, sans-serif']
+      sans: ['Gotham SSm A, sans-serif'],
+      oswald: ['Oswald', 'sans-serif'],
     },
     extend: {},
   },

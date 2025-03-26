@@ -6,9 +6,9 @@ import Card from "../components/Card.astro";
 <Layout title="Welcome">
   <main>
     <header
-      class="py-0 px-10 flex items-center fixed top-0 w-full justify-between z-40 bg-black bg-opacity-50 p-4"
+      class="py-0 px-10 flex items-center fixed top-0 w-full justify-between z-40 bg-gray-50 bg-opacity-95 font-sans p-4"
     >
-      <div class="flex-grow flex basis-0">
+      <div class="flex-grow flex  basis-0">
         <img
           src="/images/iconC.svg"
           alt="Título"
@@ -18,7 +18,7 @@ import Card from "../components/Card.astro";
 
       <nav class="flex-grow flex">
         <ul
-          class="flex gap-7 text-sm [&>li>a]:font-medium [&>li>a]:inline-block [&>li>a]:px-4 [&>li>a]:py-2 text-white z-50 relative"
+          class="flex gap-7 text-sm [&>li>a]:font-medium [&>li>a]:inline-block [&>li>a]:px-4 [&>li>a]:py-2 text-black z-50 relative"
         >
           <li>
             <a href="#" class="hover:text-gray-300">About Us</a>
@@ -38,22 +38,22 @@ import Card from "../components/Card.astro";
     </header>
 
     <section
-      class="bg-black h-screen w-screen text-center relative overflow-hidden z-30 flex justify-center gap-40 items-center"
+      class="bg-white h-screen w-screen text-center relative overflow-hidden z-30 flex  justify-center items-center gap-40 "
     >
       <!-- Cards -->
-      <div class="relative z-50">
+      <div class="relative z-50 ">
         <Card 
           icon="helm"
-          header1="Act Construction y water solutions" 
+          header1="Act Construction and water solutions" 
           title="transform your land"
-          subTitle="We lay the foundation for your next dream."
-          title2="Experts in excavation and water solutions"
+          subTitle="Experts in excavation and water solutions."
+          title2="We lay the foundation for your next dream "
           paragraph="With over 10 years of experience, we provide top-quality excavation, demolition, trenching, land clearing, and water delivery services throughout Hawaii.ith over 10 years of experience, we provide high-quality excavation, demolition, trenching, land clearing, and water delivery services across Hawaii."
           link="/projects"
           tipo="simple"
         />
       </div>
-      <div class="relarive z-50">
+      <div class="relative z-50 ">
         <Card tipo="formulario"/>
       </div>
 
