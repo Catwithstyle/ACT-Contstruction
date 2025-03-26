@@ -1,75 +1,105 @@
 ---
-import { Icon } from 'astro-icon/components';
+import { User, Mail, Phone } from "lucide-react";
 
-const { header1, icon, title, title2,subTitle, paragraph, link,tipo } = Astro.props;
+const { header1, icon, title, title2, subTitle, paragraph, link, tipo } = Astro.props;
 ---
 
-<div class="max-w-sm bg-white rounded-2xl  mx-auto overflow-hidden  border-gray-200  flex flex-col items-center   ">
-    <!-- Icono -->
-    {icon && (
-         <div class="text-3xl  py-4">
-            <img src={`/icons/${icon}.svg`} alt="Icon" class="w-10 h-10" />
+<div class="max-w-none bg-gray-50 rounded-[8px] h-[500px] mx-auto overflow-hidden flex flex-col items-center 
+    border-l-4 border-yellow-500 
+    shadow-[0px_-6px_6px_-4px_rgb(202,138,4),6px_0px_6px_-4px_rgb(202,138,4)]">
 
+    <!-- Tipo Simple -->
+    {tipo === "simple" && (
+    <div class="flex  text-left max-w-full flex-col w-[800px] pt-[70px]"> 
+       
+        <div class="pl-6 pr-20"> 
+            <div class=" bg-gray-50 mx-auto overflow-hidden flex flex-col items-start text-justify  pl-8 ">
+                <h3 class="text-black text-sm font-bold uppercase tracking-wider flex items-center pb-3 gap-2 ">
+                    {icon && (
+                        <img src={`/icons/${icon}.svg`} alt="Icono" class="w-10 h-10" />
+                    )}
+                    {header1}
+                </h3>
+
+                <h1 class="text-4xl font-bold font-oswald text-black uppercase mt-1 pb-3">{title}</h1>
+                <h2 class="text-lg text-gray-400 uppercase font-semibold font-sans">{title2}</h2>
+                <h2 class="text-lg  font-semibold text-yellow-500  uppercase font-sans">{subTitle}</h2>
+                <p class="text-base font-normal text-gray-700 mt-2 font-sans">{paragraph}</p>
+
+                <!-- Botones -->
+                <div class="flex flex-col sm:flex-row gap-3 mt-4 w-full text-center">
+                    {link && (
+                        <a href={link} class="flex-1 bg-yellow-500 text-white font-sans uppercase text-sm font-semibold py-3 px-5 rounded-lg hover:bg-yellow-600 transition">
+                            View our projects
+                        </a>
+                    )}
+                    {link && (
+                        <a href={link} class="flex-1 border border-black text-black text-sm font-semibold py-3 px-5 rounded-lg hover:bg-gray-200 transition flex items-center justify-center">
+                            {Phone && <Phone className="w-5 h-5 mr-2" />} Contact us
+                        </a>
+                    )}
+                </div>
+            </div>
         </div>
-    )}
-
-    <!-- Contenido -->
-     {tipo === "simple"&& (
-    <div class="p-4">
-        <h3 class="text-lg font-bold text-black uppercase">{header1}</h3> 
-        <h2 class="text-xl font-bold text-black">{title}</h2> 
-        <h2 class="text-base font-semibold uppercase text-yellow-500">{title2} </h2>
-        <h4 class="text-base font-semibold uppercase text-gray-500">{subTitle}</h4> 
-        <p class="text-sm font-semibold text-black">{paragraph}</p> 
-
-        <!-- Botón -->
-        {link && (
-            <a href={link} class="inline-block mt-4 px-4 py-2 bg-yellow-400 text-white text-sm font-medium rounded-lg hover:bg-yellow-500 transition">
-                Ver más
-            </a>
-        )}
     </div>
     )}
-   {tipo === "formulario" && (
-   <div class="bg-white p-8  w-[500px] max-w-[90%] flex flex-col items-center pt-2">
-     <header class=" text-center">
-       <h1 class="text-lg font-bold text-black uppercase">Schedule your free evaluation</h1>
-       <h2 class="text-[10px] font-thin text-black text-justify mt-2">
-         Complete this form and our team will contact you to schedule a free on-site evaluation of your project
-       </h2>
-     </header>
- 
-     <form class="mt-4 ">
-       <!-- Campo de Nombre -->
-       <label class="block mb-2 w-full text-left text-xs font-bold " for="name">Name</label>
-       <input type="text" id="name" class="border p-1 mb-4 w-full placeholder:text-sm" placeholder="Escribe tu nombre" />
- 
-       <!-- Campo de Email -->
-       <label class="block mb-2 w-full text-left font-bold text-xs " for="email">Email</label>
-       <input type="email" id="email" class="border p-1 mb-4 w-full placeholder:text-sm" placeholder="Escribe tu email" />
- 
-       <!-- Campo de Teléfono -->
-       <label class="block mb-2 w-full text-left font-bold text-xs" for="telefono">Phone</label>
-       <input type="tel" id="telefono" class="border p-1 mb-4 w-full placeholder:text-sm" placeholder="Escribe tu teléfono" />
- 
-       <!-- Campo de Tipo de Proyecto con Lista Desplegable -->
-       <label class="block mb-2 w-full text-left font-bold" for="proyecto">Tipo de Proyecto</label>
-       <select id="proyecto" class="border p-1 mb-4 w-full">
-         <option value="">Selecciona un tipo de proyecto</option>
-         <option value="web">Desarrollo Web</option>
-         <option value="app">Desarrollo de Aplicaciones</option>
-         <option value="ux">Diseño UX/UI</option>
-         <option value="marketing">Marketing Digital</option>
-       </select>
- 
-       <!-- Botón de Enviar -->
-       <button type="submit" class="bg-yellow-500 text-white p-3 rounded w-full font-bold">
-         Schedule it now.
-       </button>
-     </form>
-   </div>
- )}
- 
 
 
+    <!-- Tipo Formulario -->
+    {tipo === "formulario" && (
+        <div class="bg-gray-50 p-8 w-[500px] max-w-full flex flex-col items-center font-sans pt-[20px] px-11">
+            <header class="text-center w-full">
+                <h1 class="text-lg font-bold text-black uppercase whitespace-nowrap tracking-tight text-left">
+                    Schedule your free evaluation
+                </h1>
+                <h2 class="text-[10px] font-normal text-gray-500 text-left mt-2">
+                    Complete this form and our team will contact you to schedule a free on-site evaluation of your project.
+                </h2>
+            </header>
+
+            <form class="mt-4 w-full">
+                <!-- Nombre -->
+                <div class="relative w-full mb-4">
+                    <label class="block mb-2 text-left font-bold text-xs" for="name">Name</label>
+                    <div class="relative">
+                        <input type="text" id="name" class="border pl-10 pr-2 py-2 w-full rounded placeholder:text-sm" placeholder="Your name" />
+                        <User className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 w-5 h-5" />
+                    </div>
+                </div>
+
+                <!-- Email -->
+                <div class="relative w-full mb-4">
+                    <label class="block mb-2 text-left font-bold text-xs" for="email">Email</label>
+                    <div class="relative">
+                        <input type="email" id="email" class="border pl-10 pr-2 py-2 w-full rounded placeholder:text-sm" placeholder="Your email" />
+                        <Mail className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 w-5 h-5" />
+                    </div>
+                </div>
+
+                <!-- Teléfono -->
+                <div class="relative w-full mb-4">
+                    <label class="block mb-2 text-left font-bold text-xs" for="telefono">Phone</label>
+                    <div class="relative">
+                        <input type="tel" id="telefono" class="border pl-10 pr-2 py-2 w-full rounded placeholder:text-sm" placeholder="Your phone" />
+                        <Phone className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 w-5 h-5" />
+                    </div>
+                </div>
+
+                <!-- Tipo de Proyecto -->
+                <label class="block mb-2 text-xs text-left font-bold" for="proyecto">Tipo de Proyecto</label>
+                <select id="proyecto" class="border p-1 mb-4 w-full">
+                    <option value="" class="text-sm">Select a project type.</option>
+                    <option value="web" class="text-sm">Desarrollo Web</option>
+                    <option value="app" class="text-sm">Desarrollo de Aplicaciones</option>
+                    <option value="ux" class="text-sm">Diseño UX/UI</option>
+                    <option value="marketing" class="text-sm">Marketing Digital</option> 
+                </select>
+
+                <!-- Botón de Enviar -->
+                <button type="submit" class="bg-yellow-500 text-white p-3 rounded w-full font-bold">
+                    Schedule it now.
+                </button>
+            </form>
+        </div>
+    )}
 </div>
