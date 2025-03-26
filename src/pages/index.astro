@@ -1,72 +1,30 @@
 ---
 import Layout from "../layouts/Layout.astro";
-import Card from "../components/Card.astro";
+import InicioSeccion from "../components/InicioSeccion.astro"
+import HeaderLanding from "../components/HeaderLanding.astro";
+
+import AboutUsSeccion from "../components/AboutUsSeccion.astro";
+import StatsSeccion from "../components/StatsSeccion.astro";
+
 ---
 
 <Layout title="Welcome">
-  <main>
-    <header
-      class="py-0 px-10 flex items-center fixed top-0 w-full justify-between z-40 bg-gray-50 bg-opacity-95 font-sans p-4"
-    >
-      <div class="flex-grow flex  basis-0">
-        <img
-          src="/images/iconC.svg"
-          alt="Título"
-          class="h-24 max-w-[100px]"
-        />
-      </div>
 
-      <nav class="flex-grow flex">
-        <ul
-          class="flex gap-7 text-sm [&>li>a]:font-medium [&>li>a]:inline-block [&>li>a]:px-4 [&>li>a]:py-2 text-black z-50 relative"
-        >
-          <li>
-            <a href="#" class="hover:text-gray-300">About Us</a>
-          </li>
-          <li>
-            <a href="#" class="hover:text-gray-300">Projects</a>
-          </li>
-          <li><a href="#" class="hover:text-gray-300">Clients</a></li>
-          <li>
-            <a href="#" class="hover:text-gray-300">Services</a>
-          </li>
-          <li> 
-            <a href="#" class="hover:text-gray-300">Information</a>
-          </li>
-        </ul>
-      </nav>
-    </header>
+  <HeaderLanding/>
+  <main class="relative w-full h-screen overflow-auto snap-y snap-mandatory">
+    <div class="snap-center">
+      <InicioSeccion />
+    </div>
+    <div class="snap-center">
+      <AboutUsSeccion/>
+    </div>
+    <div class="snap-center">
+      <StatsSeccion>
+    </div>
+    <div class="snap-center">
+      <InicioSeccion />
+    </div>
 
-    <section
-      class="bg-white h-screen w-screen text-center relative overflow-hidden z-30 flex  justify-center items-center gap-40 "
-    >
-      <!-- Cards -->
-      <div class="relative z-50 ">
-        <Card 
-          icon="helm"
-          header1="Act Construction and water solutions" 
-          title="transform your land"
-          subTitle="Experts in excavation and water solutions."
-          title2="We lay the foundation for your next dream "
-          paragraph="With over 10 years of experience, we provide top-quality excavation, demolition, trenching, land clearing, and water delivery services throughout Hawaii.ith over 10 years of experience, we provide high-quality excavation, demolition, trenching, land clearing, and water delivery services across Hawaii."
-          link="/projects"
-          tipo="simple"
-        />
-      </div>
-      <div class="relative z-50 ">
-        <Card tipo="formulario"/>
-      </div>
-
-      <!-- Video de fondo -->
-      <div class="absolute top-0 left-0 w-full h-full z-10 ">
-        <video
-          class="w-full h-full object-cover"
-          autoplay
-          muted
-          loop
-          src="/public/images/videos/video3.webm"
-        ></video>
-      </div>
-    </section>
   </main>
 </Layout>
+
