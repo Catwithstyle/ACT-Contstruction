@@ -1,6 +1,7 @@
 ---
 import Card from "../components/Card.astro";
-import stats from "../components/Stats.astro";
+
+
 ---
 <section
 class="bg-white h-screen w-screen text-center relative overflow-hidden z-30 flex  justify-center items-center gap-40 "
@@ -33,3 +34,41 @@ class="bg-white h-screen w-screen text-center relative overflow-hidden z-30 flex
   ></video>
 </div>
 </section>
+
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+   // Seleccionamos la sección About Us
+   const aboutUs = document.getElementById("about-us");
+ 
+   // Creamos el IntersectionObserver
+   const observer = new IntersectionObserver((entries) => {
+     entries.forEach(entry => {
+       if (entry.isIntersecting) {
+         // Si el 50% de la sección "About Us" está visible en el viewport
+         if (entry.intersectionRatio >= 0.5) {
+           // Activamos el scroll-snap
+           document.documentElement.classList.remove("snap-none");
+           document.documentElement.classList.add("snap-mandatory");
+           document.documentElement.style.scrollBehavior = "smooth"; // Habilitamos el scroll suave
+         }
+       } else {
+         // Si la sección "About Us" ya no está en el 50% del viewport, desactivamos el scroll-snap
+         document.documentElement.classList.remove("snap-mandatory");
+         document.documentElement.classList.add("snap-none");
+         document.documentElement.style.scrollBehavior = "auto"; // Desactivamos el scroll suave
+       }
+     });
+   }, {
+     threshold: 0.5  // Activar cuando el 50% de la sección sea visible
+   });
+ 
+   // Observar la sección
+   if (aboutUs) {
+     observer.observe(aboutUs);
+   }
+ });
+ 
+ 
+ 
+ 
+ </script>
