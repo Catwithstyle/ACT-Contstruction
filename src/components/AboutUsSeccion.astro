@@ -1,11 +1,11 @@
 ---
 import StatsSeccion from "../components/StatsSeccion.astro"
 ---
-<section class="bg-white h-screen w-screen text-center overflow-hidden relative">
+<section id="about-us" class="bg-white h-screen w-screen text-center overflow-hidden relative ">
   <!-- Contenido principal -->
 <div class="z-30 relative h-full ">
   <header class="flex flex-col">
-    <h2 class="text-4xl font-bold text-black pt-[180px]">About us</h2>
+    <h2 class="text-4xl font-bold text-black pt-[130px]">About us</h2>
     <p class="text-sm text-justify text-gray-600 pl-[500px] pr-[500px] pt-[50px] font-sans">ACT Construction & Water Solutions is a family-owned business with over 10 years of experience.
 
       Founded by the father of our current owner, we proudly continue his legacy by providing top-tier excavation, grading, demolition, trenching, and land clearing services using high-quality machinery.<br> <br>
@@ -14,12 +14,14 @@ import StatsSeccion from "../components/StatsSeccion.astro"
    
   </header>
 
-  <footer class="flex flex-grow justify-end pb-10 w-full h-1/3 bg-cover bg-center opacity-80 mt-12 " style="background-image: url('images/imageAboutUs.webp');">
+  <footer class="flex flex-grow justify-end pb-10 w-full h-1/3 bg-cover bg-center bg-fixed   absolute mt-12" 
+   style="background-image: url('images/imageAboutUs.webp');">
+    <!-- Fondo semitransparente para mejorar visibilidad -->
+    <div class="absolute inset-0 bg-black/50"></div>
+    
+    <div class="  justify-center flex-grow z-50"><StatsSeccion/></div>
    
   </footer>
   
 </div>
   
-
-
-</section>
