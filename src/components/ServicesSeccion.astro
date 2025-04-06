@@ -1,47 +1,65 @@
-<section class="bg-gray-100 py-12 h-screen w-screen ">
-    <div class="container mx-auto text-center pt-[60px] ">
-        <h2 class="text-3xl font-bold mb-6 pb-10">Our Services</h2>
+---
+import { ArrowDownWideNarrow, Axe, Hammer, Waves } from "lucide-react";
+---
 
-        <div class="grid grid-cols-1 md:grid-cols-[min-content_min-content_min-content] gap-10  justify-center place-items-center font-sans ">
-            <article class="bg-white shadow-lg rounded-lg h-[300px] w-[320px]  pb-6">
-                <img src="/images/maquina1.webp" alt="Excavation and leveling" class="w-full h-40 object-cover rounded">
-                <h3 class="text-xl font-semibold mt-4 flex items-center justify-center mr-2">
-                    <img src="/icons/Escavadora.svg" class="w-9 h-9 icon-color" alt=""> Excavation
-                </h3>
-                <p class="text-gray-800 text-xs mt-2">Precisely prepare your site for any type of project.</p>
-            </article>
+<section class="bg-gray-100 py-12 h-screen w-screen">
+  <div class="container mx-auto text-center pt-[60px]">
+    <h2 class="text-2xl font-bold mb-5 pb-6">Our Services</h2>
 
-            <article class="bg-white shadow-lg rounded-lg h-[300px] w-[320px] pb-6">
-                <img src="/images/maquina1.webp" alt="Excavation and leveling" class="w-full h-40 object-cover rounded">
-                <h3 class="text-xl font-semibold mt-4 flex items-center justify-center mr-2">
-                    <img src="/icons/Escavadora.svg" class="w-9 h-9 icon-color" alt=""> Excavation
-                </h3>
-                <p class="text-gray-800 text-xs mt-2">Precisely prepare your site for any type of project.</p>
-            </article>
+    <div
+      class="grid grid-cols-1 md:grid-cols-[min-content_min-content_min-content] gap-10 justify-center place-items-center font-sans"
+    >
+      <article class="bg-white shadow-lg rounded-lg h-[250px] w-[320px] pb-6">
+        <img src="/images/maquina1.webp" alt="Excavation and leveling" class="w-full h-40 object-cover rounded" />
+        <h3 class="text-xl font-semibold mt-4 flex items-center justify-center mr-2">
+          <img src="/icons/Escavadora.svg" class="w-9 h-9 icon-color" alt="" /> Excavation
+        </h3>
+        <p class="text-gray-800 text-xs mx-2 mt-2">Precisely prepare your site for any type of project.</p>
+      </article>
 
-            <article class="bg-white shadow-lg rounded-lg h-[300px] w-[320px] pb-6">
-                <img src="/images/maquina1.webp" alt="Excavation and leveling" class="w-full h-40 object-cover rounded">
-                <h3 class="text-xl font-semibold mt-4 flex items-center justify-center mr-2">
-                    <img src="/icons/Escavadora.svg" class="w-9 h-9 icon-color" alt=""> Excavation
-                </h3>
-                <p class="text-gray-800 text-xs mt-2">Precisely prepare your site for any type of project.</p>
-            </article>
+      <article class="bg-white shadow-lg rounded-lg h-[250px] w-[320px] pb-6">
+        <img src="/images/maquina1.webp" alt="Excavation and leveling" class="w-full h-40 object-cover rounded" />
+        <h3 class="text-xl font-semibold mt-4 flex items-center justify-center mr-3">
+          <Hammer className="mr-2" /> Demolition
+        </h3>
+        <p class="text-gray-800 text-xs mt-2">Safe and efficient demolitions.</p>
+      </article>
 
-            <article class="bg-white shadow-lg rounded-lg h-[300px] w-[320px] md:col-span-2 md:col-start-1 md:row-start-2 pb-6">
-                <img src="/images/maquina1.webp" alt="Excavation and leveling" class="w-full h-40 object-cover rounded">
-                <h3 class="text-xl font-semibold mt-4 flex items-center justify-center mr-2">
-                    <img src="/icons/Escavadora.svg" class="w-9 h-9 icon-color" alt=""> Excavation
-                </h3>
-                <p class="text-gray-800 text-xs mt-2">Precisely prepare your site for any type of project.</p>
-            </article>
+      <article class="bg-white shadow-lg rounded-lg h-[250px] w-[320px] pb-6">
+        <img src="/images/maquina1.webp" alt="Excavation and leveling" class="w-full h-40 object-cover rounded" />
+        <h3 class="text-xl font-semibold mt-4 flex items-center justify-center mr-2">
+          <ArrowDownWideNarrow className="mr-2" />Trenching
+        </h3>
+        <p class="text-gray-800 text-xs mt-2">Public utilities and drainage solutions.</p>
+      </article>
 
-            <article class="bg-white shadow-lg rounded-lg h-[300px] w-[320px]  md:col-span-2 md:col-start-2 md:row-start-2   pb-6">
-                <img src="/images/maquina1.webp" alt="Excavation and leveling" class="w-full h-40 object-cover rounded">
-                <h3 class="text-xl font-semibold mt-4 flex items-center justify-center mr-2">
-                    <img src="/icons/Escavadora.svg" class="w-9 h-9 icon-color" alt=""> Excavation
-                </h3>
-                <p class="text-gray-800 text-xs mt-2">Precisely prepare your site for any type of project.</p>
-            </article>
-        </div>
+      <article
+        class="bg-white shadow-lg rounded-lg h-[250px] w-[320px] md:col-span-2 md:col-start-1 md:row-start-2 pb-6"
+      >
+        <img src="/images/maquina1.webp" alt="Excavation and leveling" class="w-full h-40 object-cover rounded" />
+        <h3 class="text-xl font-semibold mt-4 flex items-center justify-center mr-2">
+          <Axe className="mr-2" /> Land clearing
+        </h3>
+        <p class="text-gray-800 text-xs mt-2">Clearing the way for the next level.</p>
+      </article>
+
+      <article
+        class="bg-white shadow-lg rounded-lg h-[250px] w-[320px] md:col-span-2 md:col-start-2 md:row-start-2 pb-6"
+      >
+        <img src="/images/maquina1.webp" alt="Excavation and leveling" class="w-full h-40 object-cover rounded" />
+        <h3 class="text-xl font-semibold mt-4 flex items-center justify-center mr-2">
+          <Waves className="mr-2" />Water delivery
+        </h3>
+        <p class="text-gray-800 text-xs mt-2">Non-drinkable water – ideal for irrigation and more!.</p>
+      </article>
     </div>
+    <footer class="mt-10 text-center px-8 justify-center flex flex-col items-center max-w-3xl mx-auto">
+      <a href="#" class="bg-yellow-500 text-white px-4 py-2 rounded mb-3 text-sm font-medium">More Info</a>
+      <h3 class="text-[10px 3px] font-medium text-gray-900 font-sans max-w-3xl mx-auto">
+        Our team of experienced professionals is equipped with high-quality machinery to handle projects of any size.
+        From residential to commercial, we provide comprehensive solutions for all your construction and water-related
+        needs.
+      </h3>
+    </footer>
+  </div>
 </section>
