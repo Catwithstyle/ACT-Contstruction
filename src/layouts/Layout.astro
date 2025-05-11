@@ -8,10 +8,10 @@ import "../styles/global.css"; // Asegúrate de que la ruta es correcta
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="generator" content="{Astro.generator}" />
-    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@700&display=swap" rel="stylesheet" />
     <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.2.1/flowbite.min.js"></script>
 
-    <title>title </title>
+    <title>title</title>
   </head>
   <body>
     <slot />
@@ -44,15 +44,24 @@ import "../styles/global.css"; // Asegúrate de que la ruta es correcta
     font-style: normal;
   }
   body {
-    font-family: 'Oswald', sans-serif;
-}
-.parallax-section {
-  scroll-snap-align: start;
-  scroll-snap-stop: always;
-  transition: scroll-behavior 0.5s ease-in-out;
-}
-.icon-color {
-        fill: #ca8a04; /* Cambia a cualquier color que desees */
-    }
+    font-family: "Oswald", sans-serif;
+  }
+  .parallax-section {
+    scroll-snap-align: start;
+    scroll-snap-stop: always;
+    transition: scroll-behavior 0.5s ease-in-out;
+  }
+  .icon-color {
+    fill: #ca8a04; /* Cambia a cualquier color que desees */
+  }
 
+  html {
+    scroll-behavior: smooth;
+  }
+  /* Opcional: ajustar la duración del scroll */
+  @media (prefers-reduced-motion: no-preference) {
+    html {
+      scroll-behavior: smooth;
+    }
+  }
 </style>

@@ -1,27 +1,110 @@
 ---
-import StatsSeccion from "../components/StatsSeccion.astro"
+import StatsSeccion from "./StatsSeccion.astro";
 ---
-<section id="about-us" class="bg-white h-screen w-screen text-center overflow-hidden relative ">
-  <!-- Contenido principal -->
-<div class="z-30 relative h-full ">
-  <header class="flex flex-col">
-    <h2 class="text-4xl font-bold text-black pt-[130px]">About us</h2>
-    <p class="text-sm text-justify text-gray-600 pl-[500px] pr-[500px] pt-[50px] font-sans">ACT Construction & Water Solutions is a family-owned business with over 10 years of experience.
 
-      Founded by the father of our current owner, we proudly continue his legacy by providing top-tier excavation, grading, demolition, trenching, and land clearing services using high-quality machinery.<br> <br>
+<section
+  id="about-us"
+  class="bg-white dark:bg-dark-800 w-full text-center relative transition-colors duration-300"
+>
+  <!-- Contenido principal - Ahora completamente responsive -->
+  <div class="z-30 relative lg:h-screen lg:min-h-[700px] flex flex-col">
+    <header class="flex flex-col items-center pt-8 lg:pt-[130px] px-6 sm:px-8">
+      <div class="relative inline-block pb-2">
+        <h2 class="text-3xl lg:text-4xl font-bold text-black dark:text-white transition-colors duration-300">
+          About us
+        </h2>
+        <div
+          id="underline"
+          class="absolute bottom-0 left-1/2 transform -translate-x-1/2 w-[70%] h-1 bg-yellow-400 dark:bg-yellow-500 origin-center scale-x-0"
+        ></div>
+      </div>
       
-      To better serve our local community, we now offer non-potable water delivery for irrigation, cleaning, construction, and more. With a strong commitment to excellence, we take pride in serving the Hawaiian community with reliability and dedication.</p>
-   
-  </header>
+      <!-- Texto responsive -->
+      <p
+        class="text-sm lg:text-base text-justify text-gray-600 dark:text-gray-300 pt-6 lg:pt-[50px] px-0 sm:px-4 lg:px-[500px] font-sans transition-colors duration-300"
+      >
+        ACT Construction & Water Solutions is a family-owned business with over 10 years of experience. Founded by the
+        father of our current owner, we proudly continue his legacy by providing top-tier excavation, grading,
+        demolition, trenching, and land clearing services using high-quality machinery.<br /><br />
+        To better serve our local community, we now offer non-potable water delivery for irrigation, cleaning, construction,
+        and more. With a strong commitment to excellence, we take pride in serving the Hawaiian community with reliability
+        and dedication.
+      </p>
+    </header>
 
-  <footer class="flex flex-grow justify-end pb-10 w-full h-1/3 bg-cover bg-center bg-fixed   absolute mt-12" 
-   style="background-image: url('images/imageAboutUs.webp');">
-    <!-- Fondo semitransparente para mejorar visibilidad -->
-    <div class="absolute inset-0 bg-black/50"></div>
+    <!-- Footer responsive -->
+    <footer
+      class="flex-grow flex justify-center items-end pb-8 lg:pb-10 w-full lg:h-1/3 mt-8 lg:mt-0 bg-cover bg-center lg:absolute lg:bottom-0 overflow-hidden relative"
+      style="background-image: url('images/imageAboutUs.webp'); min-height: 300px;"
+    >
+      <div class="absolute inset-0 bg-black/50 dark:bg-dark-900/70 transition-colors duration-300"></div>
+      <div class="relative z-20 w-full py-6 lg:py-0">
+        <StatsSeccion />
+      </div>
+    </footer>
+  </div>
+
+  <style>
+    #underline {
+      transition: all 0.8s cubic-bezier(0.68, -0.55, 0.27, 1.55);
+    }
+    .animate-underline {
+      animation: lineBounce 0.8s cubic-bezier(0.68, -0.55, 0.27, 1.55) forwards;
+    }
+    @keyframes lineBounce {
+      0% {
+        transform: translateX(-50%) scaleX(0);
+        height: 2px;
+        bottom: -5px;
+      }
+      60% {
+        transform: translateX(-50%) scaleX(1.2);
+        height: 5px;
+        bottom: -8px;
+      }
+      100% {
+        transform: translateX(-50%) scaleX(1);
+        height: 3px;
+        bottom: -6px;
+      }
+    }
+
+    /* Estilos específicos para móvil */
+    @media (max-width: 1023px) {
+      #about-us p {
+        padding-left: 1rem;
+        padding-right: 1rem;
+        text-align: left;
+      }
+      
+      #about-us footer {
+        position: relative;
+        margin-top: 2rem;
+        height: auto;
+        background-attachment: scroll;
+      }
+    }
+  </style>
+</section>
+
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const aboutUsSection = document.getElementById("about-us");
+    const underline = document.getElementById("underline");
     
-    <div class="  justify-center flex-grow z-50"><StatsSeccion/></div>
-   
-  </footer>
-  
-</div>
-  
+    if (aboutUsSection && underline) {
+      const observer = new IntersectionObserver(
+        function (entries) {
+          entries.forEach(function (entry) {
+            if (entry.isIntersecting) {
+              underline.classList.add("animate-underline");
+              observer.unobserve(entry.target);
+            }
+          });
+        },
+        { threshold: 0.3 }
+      );
+      observer.observe(aboutUsSection);
+    }
+  });
+</script>

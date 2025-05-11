@@ -1,28 +1,35 @@
 ---
 import Layout from "../layouts/Layout.astro";
-import InicioSeccion from "../components/InicioSeccion.astro"
+import InicioSeccion from "../components/InicioSeccion.astro";
 import HeaderLanding from "../components/HeaderLanding.astro";
 import AboutUsSeccion from "../components/AboutUsSeccion.astro";
 import ServicesSeccion from "../components/ServicesSeccion.astro";
-
+import OurProyectsSeccion from "../components/OurProyectsSeccion.astro";
+import TestimonialSeccion from "../components/TestimonialSeccion.astro";
+import ContacUsSeccion from "../components/ContactUsSeccion.astro";
 ---
 
 <Layout title="Welcome">
-
-  <HeaderLanding/>
-  <main class="relative w-full h-screen overflow-auto snap-y snap-mandatory scroll-smooth">
-    <div class="snap-center">
+  <HeaderLanding />
+  <!-- Cambiamos el comportamiento del scroll para móvil -->
+  <main class="relative w-full h-auto"> <!-- Elimina snap y overflow -->
+    <div class="min-h-screen"> <!-- Asegura altura mínima -->
       <InicioSeccion />
     </div>
-    <div class="snap-center ">
-      <AboutUsSeccion/>
+    <div class="min-h-[80vh] py-12 bg-gray-100 dark:bg-dark-800"> <!-- Fuerza fondo -->
+      <AboutUsSeccion />
     </div>
-    <div class="snap-center">
-      <ServicesSeccion/>
-    </div>``
-    
-    
+    <div class="min-h-screen py-12 bg-gray-100 dark:bg-dark-800"> <!-- Fuerza altura y fondo -->
+      <ServicesSeccion />
+    </div>
+    <div class="snap-start max-md:snap-none max-md:py-12">
+      <OurProyectsSeccion />
+    </div>
+    <div class="snap-center max-md:snap-none max-md:py-12">
+      <TestimonialSeccion />
+    </div>
+    <div class="snap-start max-md:snap-none max-md:py-12">
+      <ContacUsSeccion />
+    </div>
   </main>
-  
 </Layout>
-
