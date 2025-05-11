@@ -4,38 +4,56 @@ import { User, Mail, Phone } from "lucide-react";
 const { header1, icon, title, title2, subTitle, paragraph, link, tipo } = Astro.props;
 ---
 
-<div class="max-w-none bg-gray-50 rounded-[8px] h-[500px] mx-auto overflow-hidden flex flex-col items-center 
-    border-l-4 border-yellow-500 
-    shadow-[0px_-6px_6px_-4px_rgb(202,138,4),6px_0px_6px_-4px_rgb(202,138,4)]">
+<div class="max-w-none bg-light-100 dark:bg-dark-800 rounded-xl mx-auto overflow-hidden flex flex-col items-center 
+    border-l-4 border-yellow-500 dark:border-yellow-500
+    shadow-[0_10px_25px_-5px_rgba(202,138,4,0.3)] dark:shadow-[0_10px_25px_-5px_rgba(255,127,17,0.4)]
+    relative before:absolute before:inset-0 before:bg-gradient-to-b before:from-transparent before:to-black/5 dark:before:to-white/5 before:opacity-0 hover:before:opacity-100 before:transition-opacity before:duration-300
+    transform transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_15px_30px_-5px_rgba(202,138,4,0.4)] dark:hover:shadow-[0_15px_30px_-5px_rgba(255,127,17,0.5)]
+    group hover:z-10
+    w-full min-h-[400px] md:h-[500px]">
+
+    <!-- Efecto de borde luminoso -->
+    <div class="absolute inset-0 rounded-xl pointer-events-none 
+                border border-transparent group-hover:border-yellow-400/30 dark:group-hover:border-yellow-500/40
+                transition-all duration-300"></div>
 
     <!-- Tipo Simple -->
     {tipo === "simple" && (
-    <div class="flex  text-left max-w-full flex-col w-[800px] pt-[70px] "> 
+    <div class="flex text-left w-full flex-col px-4 py-8 md:pt-[70px] md:px-6 md:w-[800px]"> 
        
-        <div class="pl-6 pr-20"> 
-            <div class=" bg-gray-50 mx-auto overflow-hidden flex flex-col items-start text-justify  pl-8 ">
-                <h3 class="text-black text-sm font-bold uppercase tracking-wider flex items-center pb-3 gap-2 bg-cover bg-clip-border ">
+        <div class="md:pl-6 md:pr-20 w-full"> 
+            <div class="bg-light-100 dark:bg-dark-800 mx-auto overflow-hidden flex flex-col items-start text-justify px-4 md:pl-8 w-full">
+                <h3 class="text-black dark:text-dark-text text-sm font-bold uppercase tracking-wider flex items-center pb-3 gap-2 bg-cover bg-clip-border">
                     {icon && (
-                        <img src={`/icons/${icon}.svg`} alt="Icono" class="w-10 h-10" />
+                        <img src={`/icons/${icon}.svg`} alt="Icono" class="w-8 h-8 md:w-10 md:h-10 dark:filter dark:invert" />
                     )}
                     {header1}
                 </h3>
 
-                <h1 class="text-4xl font-bold font-oswald text-black uppercase mt-1 pb-3">{title}</h1>
-                <h2 class="text-lg text-gray-400 uppercase font-semibold font-sans">{title2}</h2>
-                <h2 class="text-lg  font-semibold text-yellow-500  uppercase font-sans">{subTitle}</h2>
-                <p class="text-base font-normal text-gray-700 mt-2 font-sans">{paragraph}</p>
+                <h1 class="text-2xl md:text-4xl font-bold font-oswald text-black dark:text-white uppercase mt-1 pb-3 group-hover:text-yellow-600 dark:group-hover:text-yellow-500 transition-colors duration-300">{title}</h1>
+                <h2 class="text-base md:text-lg text-gray-400 dark:text-gray-300 uppercase font-semibold font-sans">{title2}</h2>
+                <h2 class="text-base md:text-lg font-semibold text-yellow-500 dark:text-yellow-500 uppercase font-sans group-hover:scale-105 origin-left transition-transform duration-300">{subTitle}</h2>
+                <p class="text-sm md:text-base font-normal text-gray-700 dark:text-gray-300 mt-2 font-sans">{paragraph}</p>
 
-                <!-- Botones -->
+                <!-- Botones con efecto 3D mejorado -->
                 <div class="flex flex-col sm:flex-row gap-3 mt-4 w-full text-center">
                     {link && (
-                        <a href={link} class="flex-1 bg-yellow-500 text-white font-sans uppercase text-sm font-semibold py-3 px-5 rounded-lg hover:bg-yellow-600 transition">
+                        <a href={link} class="flex-1 bg-yellow-500 hover:bg-yellow-600 text-white font-sans uppercase text-xs sm:text-sm font-semibold py-2 sm:py-3 px-4 sm:px-5 rounded-lg 
+                            transition-all duration-300 shadow-md hover:shadow-lg 
+                            transform hover:-translate-y-0.5 hover:scale-105
+                            border border-yellow-600 dark:border-yellow-700
+                            relative overflow-hidden
+                            after:absolute after:inset-0 after:bg-gradient-to-b after:from-white/20 after:to-transparent after:opacity-0 hover:after:opacity-100 after:transition-opacity">
                             View our projects
                         </a>
                     )}
                     {link && (
-                        <a href={link} class="flex-1 border border-black text-black text-sm font-semibold py-3 px-5 rounded-lg hover:bg-gray-200 transition flex items-center justify-center">
-                            {Phone && <Phone className="w-5 h-5 mr-2" />} Contact us
+                        <a href={link} class="flex-1 border border-black dark:border-gray-300 text-black dark:text-white text-xs sm:text-sm font-semibold py-2 sm:py-3 px-4 sm:px-5 rounded-lg 
+                            hover:bg-gray-200 dark:hover:bg-dark-700 transition-all duration-300 
+                            flex items-center justify-center
+                            shadow-sm hover:shadow-md
+                            transform hover:-translate-y-0.5">
+                            {Phone && <Phone className="w-4 h-4 sm:w-5 sm:h-5 mr-2" />} Contact us
                         </a>
                     )}
                 </div>
@@ -44,60 +62,77 @@ const { header1, icon, title, title2, subTitle, paragraph, link, tipo } = Astro.
     </div>
     )}
 
-
     <!-- Tipo Formulario -->
     {tipo === "formulario" && (
-        <div class="bg-gray-50 p-8 w-[500px] max-w-full flex flex-col items-center font-sans pt-[20px] px-11">
-            <header class="text-center w-full">
-                <h1 class="text-lg font-bold text-black uppercase whitespace-nowrap tracking-tight text-left">
+        <div class="bg-light-100 dark:bg-dark-800 p-4 sm:p-6 md:p-8 w-full max-w-[500px] flex flex-col items-center font-sans pt-6 md:pt-[20px] px-4 sm:px-6 md:px-11">
+            <header class="text-center w-full transform group-hover:scale-105 transition-transform duration-500">
+                <h1 class="text-base md:text-lg font-bold text-black dark:text-white uppercase tracking-tight text-left 
+                           bg-clip-text text-transparent bg-gradient-to-r from-yellow-500 to-yellow-600 dark:from-yellow-400 dark:to-yellow-500">
                     Schedule your free evaluation
                 </h1>
-                <h2 class="text-[10px] font-normal text-gray-500 text-left mt-2">
+                <h2 class="text-[10px] md:text-[10px] font-normal text-gray-500 dark:text-gray-400 text-left mt-2">
                     Complete this form and our team will contact you to schedule a free on-site evaluation of your project.
                 </h2>
             </header>
 
-            <form class="mt-4 w-full">
-                <!-- Nombre -->
-                <div class="relative w-full mb-4">
-                    <label class="block mb-2 text-left font-bold text-xs" for="name">Name</label>
-                    <div class="relative">
-                        <input type="text" id="name" class="border pl-10 pr-2 py-2 w-full rounded placeholder:text-sm" placeholder="Your name" />
-                        <User className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 w-5 h-5" />
+            <form class="mt-4 w-full space-y-3 md:space-y-4">
+                <!-- Campos del formulario con efecto 3D -->
+                <div class="relative w-full mb-3 md:mb-4 transform hover:-translate-y-0.5 transition-transform duration-300">
+                    <label class="block mb-1 md:mb-2 text-left font-bold text-xs dark:text-gray-300" for="name">Name</label>
+                    <div class="relative shadow-sm hover:shadow-md rounded-lg transition-shadow duration-300">
+                        <input type="text" id="name" class="border dark:border-dark-600 dark:bg-dark-700 dark:text-white pl-8 md:pl-10 pr-2 py-2 w-full rounded-lg placeholder:text-xs md:placeholder:text-sm dark:placeholder-gray-400 
+                                  focus:ring-2 focus:ring-yellow-500 focus:border-transparent focus:outline-none
+                                  transition-all duration-300" placeholder="Your name" />
+                        <User className="absolute left-2 md:left-3 top-1/2 transform -translate-y-1/2 text-gray-400 dark:text-gray-300 w-4 h-4 md:w-5 md:h-5" />
                     </div>
                 </div>
 
-                <!-- Email -->
-                <div class="relative w-full mb-4">
-                    <label class="block mb-2 text-left font-bold text-xs" for="email">Email</label>
-                    <div class="relative">
-                        <input type="email" id="email" class="border pl-10 pr-2 py-2 w-full rounded placeholder:text-sm" placeholder="Your email" />
-                        <Mail className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 w-5 h-5" />
+                <!-- Email (mismo estilo que Name) -->
+                <div class="relative w-full mb-3 md:mb-4 transform hover:-translate-y-0.5 transition-transform duration-300">
+                    <label class="block mb-1 md:mb-2 text-left font-bold text-xs dark:text-gray-300" for="email">Email</label>
+                    <div class="relative shadow-sm hover:shadow-md rounded-lg transition-shadow duration-300">
+                        <input type="email" id="email" class="border dark:border-dark-600 dark:bg-dark-700 dark:text-white pl-8 md:pl-10 pr-2 py-2 w-full rounded-lg placeholder:text-xs md:placeholder:text-sm dark:placeholder-gray-400 
+                                  focus:ring-2 focus:ring-yellow-500 focus:border-transparent focus:outline-none
+                                  transition-all duration-300" placeholder="Your email" />
+                        <Mail className="absolute left-2 md:left-3 top-1/2 transform -translate-y-1/2 text-gray-400 dark:text-gray-300 w-4 h-4 md:w-5 md:h-5" />
                     </div>
                 </div>
 
-                <!-- Teléfono -->
-                <div class="relative w-full mb-4">
-                    <label class="block mb-2 text-left font-bold text-xs" for="telefono">Phone</label>
-                    <div class="relative">
-                        <input type="tel" id="telefono" class="border pl-10 pr-2 py-2 w-full rounded placeholder:text-sm" placeholder="Your phone" />
-                        <Phone className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 w-5 h-5" />
+                <!-- Teléfono (mismo estilo) -->
+                <div class="relative w-full mb-3 md:mb-4 transform hover:-translate-y-0.5 transition-transform duration-300">
+                    <label class="block mb-1 md:mb-2 text-left font-bold text-xs dark:text-gray-300" for="telefono">Phone</label>
+                    <div class="relative shadow-sm hover:shadow-md rounded-lg transition-shadow duration-300">
+                        <input type="tel" id="telefono" class="border dark:border-dark-600 dark:bg-dark-700 dark:text-white pl-8 md:pl-10 pr-2 py-2 w-full rounded-lg placeholder:text-xs md:placeholder:text-sm dark:placeholder-gray-400 
+                                  focus:ring-2 focus:ring-yellow-500 focus:border-transparent focus:outline-none
+                                  transition-all duration-300" placeholder="Your phone" />
+                        <Phone className="absolute left-2 md:left-3 top-1/2 transform -translate-y-1/2 text-gray-400 dark:text-gray-300 w-4 h-4 md:w-5 md:h-5" />
                     </div>
                 </div>
 
-                <!-- Tipo de Proyecto -->
-                <label class="block mb-2 text-xs text-left font-bold" for="proyecto">Tipo de Proyecto</label>
-                <select id="proyecto" class="border p-1 mb-4 w-full">
-                    <option value="" class="text-sm">Select a project type.</option>
-                    <option value="web" class="text-sm">Desarrollo Web</option>
-                    <option value="app" class="text-sm">Desarrollo de Aplicaciones</option>
-                    <option value="ux" class="text-sm">Diseño UX/UI</option>
-                    <option value="marketing" class="text-sm">Marketing Digital</option> 
-                </select>
+                <!-- Select con efectos -->
+                <div class="transform hover:-translate-y-0.5 transition-transform duration-300">
+                    <label class="block mb-1 md:mb-2 text-xs text-left font-bold dark:text-gray-300" for="proyecto">Tipo de Proyecto</label>
+                    <select id="proyecto" class="border dark:border-dark-600 dark:bg-dark-700 dark:text-white p-2 mb-3 md:mb-4 w-full rounded-lg shadow-sm hover:shadow-md
+                                focus:ring-2 focus:ring-yellow-500 focus:border-transparent focus:outline-none
+                                transition-all duration-300 text-xs md:text-sm">
+                        <option value="" class="text-xs md:text-sm dark:text-gray-300">Select a project type.</option>
+                        <option value="web" class="text-xs md:text-sm dark:text-gray-300">Desarrollo Web</option>
+                        <option value="app" class="text-xs md:text-sm dark:text-gray-300">Desarrollo de Aplicaciones</option>
+                        <option value="ux" class="text-xs md:text-sm dark:text-gray-300">Diseño UX/UI</option>
+                        <option value="marketing" class="text-xs md:text-sm dark:text-gray-300">Marketing Digital</option> 
+                    </select>
+                </div>
 
-                <!-- Botón de Enviar -->
-                <button type="submit" class="bg-yellow-500 text-white p-3 rounded w-full font-bold">
-                    Schedule it now.
+                <!-- Botón de enviar con efecto 3D premium -->
+                <button type="submit" class="w-full bg-yellow-500 hover:bg-yellow-600 text-white p-2 md:p-3 rounded-lg font-bold 
+                            transform hover:-translate-y-0.5 hover:shadow-lg active:translate-y-0
+                            transition-all duration-300
+                            border border-yellow-600 dark:border-yellow-700
+                            shadow-md
+                            relative overflow-hidden
+                            after:absolute after:inset-0 after:bg-gradient-to-b after:from-white/30 after:to-transparent after:opacity-0 hover:after:opacity-100 after:transition-opacity
+                            text-sm md:text-base">
+                    Schedule it now
                 </button>
             </form>
         </div>

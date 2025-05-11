@@ -1,0 +1,207 @@
+<!-- Testimonials Section -->
+<section class="bg-white dark:bg-dark-800 py-28 font-sans transition-colors duration-300" id="testimonials-section">
+  <div class="container mx-auto h-[50vh] px-4">
+    <div class="text-center mb-12">
+      <!-- Título con línea amarilla -->
+      <div class="relative inline-block mb-4">
+        <h2 class="text-3xl font-bold">
+          <span class="text-black dark:text-white">What Our </span>
+          <span class="text-yellow-500 dark:text-yellow-400">Clients</span>
+        </h2>
+        <div
+          id="testimonials-underline"
+          class="absolute bottom-0 left-1/2 transform -translate-x-1/2 w-[50%] h-1 bg-yellow-400 dark:bg-yellow-500 origin-center scale-x-0 transition-colors duration-300"
+          style="bottom: -8px;"
+        >
+        </div>
+      </div>
+
+      <!-- Párrafo descriptivo -->
+      <p class="text-gray-600 dark:text-gray-300 max-w-2xl mx-auto mt-4 transition-colors duration-300">
+        Hear what our satisfied clients have to say about their experiences with our services
+      </p>
+
+      <!-- Grid de testimonios -->
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mt-12">
+        <!-- Testimonial 1 -->
+        <div
+          class="bg-gray-50 dark:bg-dark-700 p-6 rounded-lg shadow-md dark:shadow-dark-900 hover:shadow-lg dark:hover:shadow-dark-600 transition-all duration-300"
+        >
+          <div class="flex items-center mb-4">
+            <img
+              src="/images/client1.jpg"
+              alt="John D."
+              class="w-12 h-12 rounded-full object-cover border-2 border-yellow-500 dark:border-yellow-400"
+            />
+            <div class="ml-4">
+              <h4 class="font-semibold text-gray-800 dark:text-white">John D.</h4>
+              <p class="text-yellow-500 dark:text-yellow-400 text-sm transition-colors duration-300">
+                Residential Client
+              </p>
+            </div>
+          </div>
+          <p class="text-gray-600 dark:text-gray-300 italic transition-colors duration-300">
+            "The land clearing service was exceptional! The team worked efficiently and left my property ready for
+            construction. Highly recommended!"
+          </p>
+          <div class="mt-4 flex text-yellow-400 dark:text-yellow-400 transition-colors duration-300">★ ★ ★ ★ ★</div>
+        </div>
+
+        <!-- Testimonial 2 -->
+        <div
+          class="bg-gray-50 dark:bg-dark-700 p-6 rounded-lg shadow-md dark:shadow-dark-900 hover:shadow-lg dark:hover:shadow-dark-600 transition-all duration-300"
+        >
+          <div class="flex items-center mb-4">
+            <img
+              src="/images/client2.jpg"
+              alt="Maria S."
+              class="w-12 h-12 rounded-full object-cover border-2 border-yellow-500 dark:border-yellow-400"
+            />
+            <div class="ml-4">
+              <h4 class="font-semibold text-gray-800 dark:text-white">Maria S.</h4>
+              <p class="text-yellow-500 dark:text-yellow-400 text-sm transition-colors duration-300">
+                Commercial Client
+              </p>
+            </div>
+          </div>
+          <p class="text-gray-600 dark:text-gray-300 italic transition-colors duration-300">
+            "Precision excavation done right! Completed our commercial project ahead of schedule with no issues. Will
+            definitely use them again."
+          </p>
+          <div class="mt-4 flex text-yellow-400 dark:text-yellow-400 transition-colors duration-300">★ ★ ★ ★ ★</div>
+        </div>
+
+        <!-- Testimonial 3 -->
+        <div
+          class="bg-gray-50 dark:bg-dark-700 p-6 rounded-lg shadow-md dark:shadow-dark-900 hover:shadow-lg dark:hover:shadow-dark-600 transition-all duration-300"
+        >
+          <div class="flex items-center mb-4">
+            <img
+              src="/images/client3.jpg"
+              alt="Robert K."
+              class="w-12 h-12 rounded-full object-cover border-2 border-yellow-500 dark:border-yellow-400"
+            />
+            <div class="ml-4">
+              <h4 class="font-semibold text-gray-800 dark:text-white">Robert K.</h4>
+              <p class="text-yellow-500 dark:text-yellow-400 text-sm transition-colors duration-300">
+                Agricultural Client
+              </p>
+            </div>
+          </div>
+          <p class="text-gray-600 dark:text-gray-300 italic transition-colors duration-300">
+            "Reliable water delivery service for our farm. Always on time and with excellent customer service. Five
+            stars!"
+          </p>
+          <div class="mt-4 flex text-yellow-400 dark:text-yellow-400 transition-colors duration-300">★ ★ ★ ★ ★</div>
+        </div>
+      </div>
+
+      <!-- Controles del carrusel para móviles -->
+      <div class="mt-8 flex justify-center space-x-4 md:hidden">
+        <button
+          class="testimonial-prev bg-yellow-500 dark:bg-yellow-500 hover:bg-yellow-600 dark:hover:bg-yellow-600 text-white p-2 rounded-full transition-colors duration-300"
+        >
+          ←
+        </button>
+        <button
+          class="testimonial-next bg-yellow-500 dark:bg-yellow-500 hover:bg-yellow-600 dark:hover:bg-yellow-600 text-white p-2 rounded-full transition-colors duration-300"
+        >
+          →
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <style>
+    #testimonials-underline {
+      transition: all 0.8s cubic-bezier(0.68, -0.55, 0.27, 1.55);
+    }
+    .animate-underline {
+      animation: lineBounce 0.8s cubic-bezier(0.68, -0.55, 0.27, 1.55) forwards;
+    }
+    @keyframes lineBounce {
+      0% {
+        transform: translateX(-50%) scaleX(0);
+        height: 2px;
+      }
+      60% {
+        transform: translateX(-50%) scaleX(1.2);
+        height: 5px;
+      }
+      100% {
+        transform: translateX(-50%) scaleX(1);
+        height: 3px;
+      }
+    }
+  </style>
+</section>
+
+<script>
+  // Animation for the yellow line
+  document.addEventListener("DOMContentLoaded", function () {
+    const testimonialsSection = document.getElementById("testimonials-section");
+    const underline = document.getElementById("testimonials-underline");
+
+    if (!testimonialsSection || !underline) {
+      console.error("Required elements not found");
+      return;
+    }
+
+    const observer = new IntersectionObserver(
+      function (entries) {
+        entries.forEach(function (entry) {
+          if (entry.isIntersecting) {
+            underline.classList.add("animate-underline");
+            observer.unobserve(entry.target);
+          }
+        });
+      },
+      { threshold: 0.5 }
+    );
+
+    observer.observe(testimonialsSection);
+  });
+
+  // Testimonials carousel for mobile
+  document.addEventListener("DOMContentLoaded", function () {
+    const testimonials = Array.from(document.querySelectorAll(".grid > div"));
+    const prevButton = document.querySelector(".testimonial-prev");
+    const nextButton = document.querySelector(".testimonial-next");
+    let currentIndex = 0;
+
+    function showTestimonial(index) {
+      testimonials.forEach((testimonial, i) => {
+        testimonial.style.display = i === index ? "block" : "none";
+      });
+    }
+
+    function handleResize() {
+      if (window.innerWidth < 768) {
+        showTestimonial(currentIndex);
+      } else {
+        testimonials.forEach(testimonial => {
+          testimonial.style.display = "block";
+        });
+      }
+    }
+
+    if (prevButton && nextButton) {
+      nextButton.addEventListener("click", () => {
+        currentIndex = (currentIndex + 1) % testimonials.length;
+        showTestimonial(currentIndex);
+      });
+
+      prevButton.addEventListener("click", () => {
+        currentIndex = (currentIndex - 1 + testimonials.length) % testimonials.length;
+        showTestimonial(currentIndex);
+      });
+    }
+
+    // Initialize
+    if (window.innerWidth < 768) {
+      showTestimonial(0);
+    }
+
+    window.addEventListener("resize", handleResize);
+  });
+</script>

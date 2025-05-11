@@ -1,20 +1,267 @@
 <header
   id="header-landing"
-  class="py-0 px-10 flex items-center fixed top-0 w-full z-40 h-[65px] bg-gray-50 bg-opacity-95 font-sans p-4"
+  class="py-0 px-4 sm:px-6 lg:px-10 flex items-center justify-between fixed top-0 w-full z-50 h-[65px] bg-light-100 font-sans p-4 dark:bg-dark-700 transition-all duration-300 shadow-sm dark:shadow-lg dark:border-b dark:border-dark-600"
 >
- 
-  <div class="flex items-center h-full">
-    <img src="/images/iconC.svg" alt="Título" class="h-28 w-auto mt-3" />
+  <!-- Logo -->
+  <div class="flex items-center h-full z-50">
+    <img
+      src="/images/iconC.svg"
+      alt="Título"
+      class="h-20 md:h-24 lg:h-28 w-auto mt-1 md:mt-2 lg:mt-3"
+      style="filter: invert(76%) sepia(29%) saturate(1833%) hue-rotate(330deg) brightness(102%) contrast(101%)"
+    />
   </div>
 
-  
-  <nav class="flex-1 flex justify-center items-center">
-    <ul class="flex gap-7 text-sm [&>li>a]:font-medium [&>li>a]:inline-block [&>li>a]:px-4 [&>li>a]:py-2 text-black">
-      <li><a href="#" class="hover:text-gray-300">About Us</a></li>
-      <li><a href="#" class="hover:text-gray-300">Projects</a></li>
-      <li><a href="#" class="hover:text-gray-300">Clients</a></li>
-      <li><a href="#" class="hover:text-gray-300">Services</a></li>
-      <li><a href="#" class="hover:text-gray-300">Information</a></li>
+  <!-- Botón hamburguesa para móviles -->
+  <button
+    id="mobile-menu-button"
+    class="md:hidden p-2 rounded-md text-gray-700 dark:text-gray-200 hover:text-yellow-500 dark:hover:text-yellow-400 focus:outline-none z-50"
+  >
+    <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+    </svg>
+  </button>
+
+  <!-- Navegación - Versión desktop -->
+  <nav class="hidden md:flex flex-1 justify-center items-center">
+    <ul
+      class="flex gap-4 lg:gap-7 text-xs sm:text-sm [&>li>a]:font-medium [&>li>a]:inline-block [&>li>a]:px-3 sm:[&>li>a]:px-4 [&>li>a]:py-2 text-black dark:text-gray-200"
+    >
+      <li>
+        <a
+          href="#"
+          class="relative group hover:text-yellow-500 dark:hover:text-yellow-400 transition-colors duration-300"
+        >
+          About Us
+          <span
+            class="absolute left-1/2 bottom-0 w-0 h-0.5 bg-yellow-500 dark:bg-yellow-400 group-hover:w-full group-hover:left-0 transition-all duration-300"
+          ></span>
+        </a>
+      </li>
+      <li>
+        <a
+          href="#"
+          class="relative group hover:text-yellow-500 dark:hover:text-yellow-400 transition-colors duration-300"
+        >
+          Projects
+          <span
+            class="absolute left-1/2 bottom-0 w-0 h-0.5 bg-yellow-500 dark:bg-yellow-400 group-hover:w-full group-hover:left-0 transition-all duration-500"
+          ></span>
+        </a>
+      </li>
+      <li>
+        <a
+          href="#"
+          class="relative group hover:text-yellow-500 dark:hover:text-yellow-400 transition-colors duration-300"
+        >
+          Clients
+          <span
+            class="absolute left-1/2 bottom-0 w-0 h-0.5 bg-yellow-500 dark:bg-yellow-400 group-hover:w-full group-hover:left-0 transition-all duration-500"
+          ></span>
+        </a>
+      </li>
+      <li>
+        <a
+          href="#"
+          class="relative group hover:text-yellow-500 dark:hover:text-yellow-400 transition-colors duration-300"
+        >
+          Services
+          <span
+            class="absolute left-1/2 bottom-0 w-0 h-0.5 bg-yellow-500 dark:bg-yellow-400 group-hover:w-full group-hover:left-0 transition-all duration-500"
+          ></span>
+        </a>
+      </li>
+      <li>
+        <a
+          href="#"
+          class="relative group hover:text-yellow-500 dark:hover:text-yellow-400 transition-colors duration-300"
+        >
+          Information
+          <span
+            class="absolute left-1/2 bottom-0 w-0 h-0.5 bg-yellow-500 dark:bg-yellow-400 group-hover:w-full group-hover:left-0 transition-all duration-300"
+          ></span>
+        </a>
+      </li>
     </ul>
   </nav>
+
+  <!-- Botón Dark/Light -->
+  <div class="hidden md:flex ml-6 items-center">
+    <button
+      id="theme-toggle"
+      aria-label="Toggle Dark Mode"
+      class="relative w-10 h-5 sm:w-12 sm:h-6 rounded-full bg-gray-200 dark:bg-gray-600 focus:outline-none transition-colors duration-300 group"
+    >
+      <!-- Sol (Light) -->
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        class="absolute left-1 top-1/2 transform -translate-y-1/2 w-3 h-3 sm:w-4 sm:h-4 text-yellow-500 dark:opacity-0 transition-opacity duration-300"
+        viewBox="0 0 20 20"
+        fill="currentColor"
+      >
+        <path
+          fill-rule="evenodd"
+          d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z"
+          clip-rule="evenodd"></path>
+      </svg>
+
+      <!-- Luna (Dark) -->
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        class="absolute right-1 top-1/2 transform -translate-y-1/2 w-3 h-3 sm:w-4 sm:h-4 text-yellow-400 opacity-0 dark:opacity-100 transition-opacity duration-300"
+        viewBox="0 0 20 20"
+        fill="currentColor"
+      >
+        <path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path>
+      </svg>
+
+      <!-- Círculo deslizante -->
+      <span
+        class="absolute left-1 top-1/2 transform -translate-y-1/2 w-3 h-3 sm:w-4 sm:h-4 bg-yellow-500 rounded-full shadow-sm transition-transform duration-300 dark:translate-x-5 sm:dark:translate-x-6 group-hover:bg-yellow-400"
+      ></span>
+    </button>
+  </div>
+
+  <!-- Menú móvil (oculto por defecto) -->
+  <div
+    id="mobile-menu"
+    class="md:hidden fixed inset-0 bg-black/50 dark:bg-black/70 z-40 opacity-0 pointer-events-none transition-opacity duration-300"
+  >
+    <div
+      class="absolute top-0 right-0 h-full w-3/4 bg-white dark:bg-dark-700 shadow-xl transform translate-x-full transition-transform duration-300 flex flex-col pt-20 px-6"
+    >
+      <nav class="flex-1">
+        <ul class="space-y-6">
+          <li>
+            <a
+              href="#"
+              class="block text-lg font-medium text-gray-900 dark:text-gray-200 hover:text-yellow-500 dark:hover:text-yellow-400 py-2 border-b border-gray-200 dark:border-gray-600"
+              >About Us</a
+            >
+          </li>
+          <li>
+            <a
+              href="#"
+              class="block text-lg font-medium text-gray-900 dark:text-gray-200 hover:text-yellow-500 dark:hover:text-yellow-400 py-2 border-b border-gray-200 dark:border-gray-600"
+              >Projects</a
+            >
+          </li>
+          <li>
+            <a
+              href="#"
+              class="block text-lg font-medium text-gray-900 dark:text-gray-200 hover:text-yellow-500 dark:hover:text-yellow-400 py-2 border-b border-gray-200 dark:border-gray-600"
+              >Clients</a
+            >
+          </li>
+          <li>
+            <a
+              href="#"
+              class="block text-lg font-medium text-gray-900 dark:text-gray-200 hover:text-yellow-500 dark:hover:text-yellow-400 py-2 border-b border-gray-200 dark:border-gray-600"
+              >Services</a
+            >
+          </li>
+          <li>
+            <a
+              href="#"
+              class="block text-lg font-medium text-gray-900 dark:text-gray-200 hover:text-yellow-500 dark:hover:text-yellow-400 py-2 border-b border-gray-200 dark:border-gray-600"
+              >Information</a
+            >
+          </li>
+        </ul>
+      </nav>
+
+      <div class="py-8 flex justify-center">
+        <button
+          id="mobile-theme-toggle"
+          aria-label="Toggle Dark Mode"
+          class="relative w-12 h-6 rounded-full bg-gray-200 dark:bg-gray-600 focus:outline-none transition-colors duration-300 group"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            class="absolute left-1 top-1/2 transform -translate-y-1/2 w-4 h-4 text-yellow-500 dark:opacity-0 transition-opacity duration-300"
+            viewBox="0 0 20 20"
+            fill="currentColor"
+          >
+            <path
+              fill-rule="evenodd"
+              d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z"
+              clip-rule="evenodd"></path>
+          </svg>
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            class="absolute right-1 top-1/2 transform -translate-y-1/2 w-4 h-4 text-yellow-400 opacity-0 dark:opacity-100 transition-opacity duration-300"
+            viewBox="0 0 20 20"
+            fill="currentColor"
+          >
+            <path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path>
+          </svg>
+          <span
+            class="absolute left-1 top-1/2 transform -translate-y-1/2 w-4 h-4 bg-yellow-500 rounded-full shadow-sm transition-transform duration-300 dark:translate-x-6 group-hover:bg-yellow-400"
+          ></span>
+        </button>
+      </div>
+    </div>
+  </div>
 </header>
+
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    const toggle = document.getElementById("theme-toggle");
+    const mobileToggle = document.getElementById("mobile-theme-toggle");
+    const html = document.documentElement;
+    const mobileMenuButton = document.getElementById("mobile-menu-button");
+    const mobileMenu = document.getElementById("mobile-menu");
+    const mobileMenuPanel = mobileMenu!.querySelector("div");
+
+    // Toggle del tema
+    function toggleTheme() {
+      html.classList.toggle("dark");
+      localStorage.setItem("theme", html.classList.contains("dark") ? "dark" : "light");
+    }
+
+    // Verificar preferencia guardada o del sistema
+    const savedTheme =
+      localStorage.getItem("theme") || (window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light");
+
+    if (savedTheme === "dark") html.classList.add("dark");
+
+    // Event listeners para los toggles
+    if (toggle) toggle.addEventListener("click", toggleTheme);
+    if (mobileToggle) mobileToggle.addEventListener("click", toggleTheme);
+
+    // Menú móvil
+    mobileMenuButton!.addEventListener("click", () => {
+      mobileMenu!.classList.toggle("opacity-0");
+      mobileMenu!.classList.toggle("pointer-events-none");
+      mobileMenuPanel!.classList.toggle("translate-x-full");
+      document.body.classList.toggle("overflow-hidden");
+    });
+
+    // Cerrar menú al hacer clic en un enlace
+    mobileMenu!.querySelectorAll("a").forEach(link => {
+      link.addEventListener("click", () => {
+        mobileMenu!.classList.add("opacity-0", "pointer-events-none");
+        mobileMenuPanel!.classList.add("translate-x-full");
+        document.body.classList.remove("overflow-hidden");
+      });
+    });
+
+    // Cerrar menú al hacer clic fuera
+    mobileMenu!.addEventListener("click", e => {
+      if (e.target === mobileMenu) {
+        mobileMenu!.classList.add("opacity-0", "pointer-events-none");
+        mobileMenuPanel!.classList.add("translate-x-full");
+        document.body.classList.remove("overflow-hidden");
+      }
+    });
+
+    // Ajustar menú en resize
+    window.addEventListener("resize", () => {
+      if (window.innerWidth >= 768) {
+        mobileMenu!.classList.add("opacity-0", "pointer-events-none");
+        mobileMenuPanel!.classList.add("translate-x-full");
+        document.body.classList.remove("overflow-hidden");
+      }
+    });
+  });
+</script>
