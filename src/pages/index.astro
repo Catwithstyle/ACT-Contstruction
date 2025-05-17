@@ -11,35 +11,30 @@ import ContacUsSeccion from "../components/ContactUsSeccion.astro";
 
 <Layout title="Welcome">
   <HeaderLanding />
-  <main class="w-full pt-20"> <!-- Añadido pt-20 para espacio del header -->
-    <!-- PRIMER TEST - Debe verse siempre -->
-    <div class="lg:hidden text-red-500 p-4 border-2 border-red-500 bg-white dark:bg-dark-800 text-center">
-      
-    </div>
-
+  <main class="w-full pt-20">
+  
     <div class="min-h-screen">
       <InicioSeccion />
     </div>
 
-    =
 
-    <div class="w-full min-h-screen py-12 bg-white dark:bg-gray-950">
+
+    <div class="w-full min-h-screen py-12 bg-white dark:bg-dark-800">
       <AboutUsSeccion />
     </div>
 
-    
-
-    <div class="w-full min-h-screen">
+    <div class="w-full min-h-screen bg-white dark:bg-gray-800">
       <ServicesSeccion />
     </div>
 
     <div class="w-full min-h-screen py-12 bg-white dark:bg-gray-900">
       <OurProyectsSeccion />
     </div>
-
     <div class="w-full min-h-screen py-12 bg-white dark:bg-gray-900">
-      <OurProyectsSeccion />
+      <TestimonialSeccion />
     </div>
-    
+     <div class="w-full min-h-screen py-12 bg-white dark:bg-gray-900">
+      <ContacUsSeccion />
+    </div>
   </main>
 </Layout>

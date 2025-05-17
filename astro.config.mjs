@@ -14,5 +14,11 @@ export default defineConfig({
   integrations: [tailwind(), icon(), react()],
   server:{
     allowedHosts:true
+  },
+
+   vite: {
+    ssr: {
+      noExternal: ['swiper']
+    }
   }
 });

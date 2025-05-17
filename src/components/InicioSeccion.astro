@@ -3,8 +3,10 @@ import Card from "../components/Card.astro";
 import { Phone, ArrowDown, HardHat, Home, Map } from "lucide-react";
 ---
 
-<!-- Sección para Desktop (igual a tu versión actual) -->
-<section class="hidden lg:flex bg-white h-screen w-screen text-center relative overflow-hidden z-30 justify-center items-center gap-40">
+<!-- Sección para Desktop -->
+<section
+  class="hidden lg:flex bg-white h-screen w-screen text-center relative overflow-hidden z-30 justify-center items-center gap-40"
+>
   <!-- Cards -->
   <div class="relative z-50">
     <Card
@@ -28,35 +30,39 @@ import { Phone, ArrowDown, HardHat, Home, Map } from "lucide-react";
   </div>
 </section>
 
-
 <!-- Sección para Móvil -->
-<section class="lg:hidden relative min-h-screen w-screen overflow-hidden">
+<section class="lg:hidden relative min-h-screen h-full w-screen overflow-hidden leading-none">
   <!-- Video de fondo -->
-  <div class="fixed top-0 left-0 w-full h-full z-0">
+  <div class="absolute top-0 left-0 w-full h-full z-0">
     <video class="w-full h-full object-cover" autoplay muted loop src="/public/images/videos/video3.webm"></video>
   </div>
-  
+
   <!-- Overlay oscuro -->
   <div class="fixed inset-0 bg-black/50 z-10"></div>
 
   <!-- Contenido principal -->
-  <div class="relative z-20 min-h-screen flex flex-col justify-center items-center px-6 text-center text-white pb-20">~
+  <div
+    class="relative z-20 min-h-screen h-full flex flex-col justify-center items-center px-6 text-center text-white pb-20"
+  >
     <!-- Título principal con animación -->
     <div class="animate-fade-in-down">
       <h1 class="text-5xl font-extrabold mb-3 tracking-tight font-montserrat">BUILD YOUR VISION</h1>
       <div class="w-24 h-1.5 bg-yellow-400 mb-8 mx-auto rounded-full"></div>
     </div>
-    
+
     <!-- Tarjeta principal con efecto 3D -->
-    <div class="bg-white/10 backdrop-blur-lg rounded-2xl p-8 max-w-md w-full border border-white/20 shadow-2xl transform transition-all hover:scale-[1.02] duration-300">
+    <div
+      class="bg-white/10 backdrop-blur-lg rounded-2xl p-8 max-w-md w-full border border-white/20 shadow-2xl transform transition-all hover:scale-[1.02] duration-300"
+    >
       <HardHat className="w-12 h-12 mx-auto mb-4 text-yellow-400" />
       <h2 class="text-3xl font-bold mb-3 font-montserrat uppercase tracking-wide">TRANSFORM YOUR LAND</h2>
-      <p class="text-lg mb-6 leading-relaxed font-light font-open-sans">
-        WE LAY THE FOUNDATION FOR YOUR NEXT DREAM
-      </p>
-      
+      <p class="text-lg mb-6 leading-relaxed font-light font-open-sans">WE LAY THE FOUNDATION FOR YOUR NEXT DREAM</p>
+
       <!-- Botón principal -->
-      <a href="/projects" class="inline-block bg-yellow-500 hover:bg-yellow-600 text-black font-bold py-4 px-8 rounded-xl mb-8 transition-all duration-300 transform hover:-translate-y-1 shadow-lg hover:shadow-xl uppercase tracking-wider text-sm font-montserrat">
+      <a
+        href="/projects"
+        class="inline-block bg-yellow-500 hover:bg-yellow-600 text-black font-bold py-4 px-8 rounded-xl mb-8 transition-all duration-300 transform hover:-translate-y-1 shadow-lg hover:shadow-xl uppercase tracking-wider text-sm font-montserrat"
+      >
         VIEW OUR PROJECTS
       </a>
 
@@ -82,15 +88,25 @@ import { Phone, ArrowDown, HardHat, Home, Map } from "lucide-react";
 
   <!-- Fuentes -->
   <style>
-    @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;900&family=Open+Sans:wght@300;400;600&display=swap');
-    .font-montserrat { font-family: 'Montserrat', sans-serif; }
-    .font-open-sans { font-family: 'Open Sans', sans-serif; }
+    @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;900&family=Open+Sans:wght@300;400;600&display=swap");
+    .font-montserrat {
+      font-family: "Montserrat", sans-serif;
+    }
+    .font-open-sans {
+      font-family: "Open Sans", sans-serif;
+    }
     .animate-fade-in-down {
       animation: fadeInDown 1s ease-out forwards;
     }
     @keyframes fadeInDown {
-      0% { opacity: 0; transform: translateY(-20px); }
-      100% { opacity: 1; transform: translateY(0); }
+      0% {
+        opacity: 0;
+        transform: translateY(-20px);
+      }
+      100% {
+        opacity: 1;
+        transform: translateY(0);
+      }
     }
   </style>
 </section>
