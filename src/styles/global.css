@@ -17,6 +17,11 @@
 }
 
 
+
+.hero {
+  margin-bottom: 30px; /* Ajusta este valor según necesites */
+}
+
 section {
   margin: 0;
   padding: 0;

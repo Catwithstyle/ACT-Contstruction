@@ -14,29 +14,32 @@ import ContacUsSeccion from "../components/ContactUsSeccion.astro";
   <main class="w-full pt-20"> <!-- Añadido pt-20 para espacio del header -->
     <!-- PRIMER TEST - Debe verse siempre -->
     <div class="lg:hidden text-red-500 p-4 border-2 border-red-500 bg-white dark:bg-dark-800 text-center">
-      <p class="font-bold text-lg">TEST 1: Esto debe verse en móvil</p>
+      
     </div>
 
     <div class="min-h-screen">
       <InicioSeccion />
     </div>
 
-    <!-- SEGUNDO TEST - Antes de About Us -->
-    <div class="lg:hidden text-green-500 p-4 border-2 border-green-500 bg-white dark:bg-dark-800 text-center">
-      <p class="font-bold text-lg">TEST 2: Pre-AboutUs</p>
-    </div>
+    =
 
-    <div class="w-full min-h-screen py-12 bg-white dark:bg-gray-900">
+    <div class="w-full min-h-screen py-12 bg-white dark:bg-gray-950">
       <AboutUsSeccion />
     </div>
 
-    <!-- TERCER TEST - Después de About Us -->
-    <div class="lg:hidden text-blue-500 p-4 border-2 border-blue-500 bg-white dark:bg-dark-800 text-center">
-      <p class="font-bold text-lg">TEST 3: Post-AboutUs</p>
-    </div>
+    
 
     <div class="w-full min-h-screen">
       <ServicesSeccion />
     </div>
+
+    <div class="w-full min-h-screen py-12 bg-white dark:bg-gray-900">
+      <OurProyectsSeccion />
+    </div>
+
+    <div class="w-full min-h-screen py-12 bg-white dark:bg-gray-900">
+      <OurProyectsSeccion />
+    </div>
+    
   </main>
 </Layout>
