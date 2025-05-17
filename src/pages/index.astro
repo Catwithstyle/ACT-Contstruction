@@ -12,16 +12,16 @@ import ContacUsSeccion from "../components/ContactUsSeccion.astro";
 <Layout title="Welcome">
   <HeaderLanding />
   <!-- Cambiamos el comportamiento del scroll para móvil -->
-  <main class="relative w-full h-auto"> <!-- Elimina snap y overflow -->
+  <main class="w-full h-auto overflow-visible"> <!-- Elimina snap y overflow -->
     <div class="min-h-screen"> <!-- Asegura altura mínima -->
       <InicioSeccion />
     </div>
     <div class="min-h-[80vh] py-12 bg-gray-100 dark:bg-dark-800"> <!-- Fuerza fondo -->
       <AboutUsSeccion />
     </div>
-    <div class="min-h-screen py-12 bg-gray-100 dark:bg-dark-800"> <!-- Fuerza altura y fondo -->
-      <ServicesSeccion />
-    </div>
+	<div class="snap-center max-md:snap-none max-md:min-h-screen">
+		<ServicesSeccion />
+	  </div>
     <div class="snap-start max-md:snap-none max-md:py-12">
       <OurProyectsSeccion />
     </div>
