@@ -11,25 +11,32 @@ import ContacUsSeccion from "../components/ContactUsSeccion.astro";
 
 <Layout title="Welcome">
   <HeaderLanding />
-  <!-- Cambiamos el comportamiento del scroll para móvil -->
-  <main class="w-full h-auto overflow-visible"> <!-- Elimina snap y overflow -->
-    <div class="min-h-screen"> <!-- Asegura altura mínima -->
+  <main class="w-full pt-20"> <!-- Añadido pt-20 para espacio del header -->
+    <!-- PRIMER TEST - Debe verse siempre -->
+    <div class="lg:hidden text-red-500 p-4 border-2 border-red-500 bg-white dark:bg-dark-800 text-center">
+      <p class="font-bold text-lg">TEST 1: Esto debe verse en móvil</p>
+    </div>
+
+    <div class="min-h-screen">
       <InicioSeccion />
     </div>
-    <div class="min-h-[80vh] py-12 bg-gray-100 dark:bg-dark-800"> <!-- Fuerza fondo -->
+
+    <!-- SEGUNDO TEST - Antes de About Us -->
+    <div class="lg:hidden text-green-500 p-4 border-2 border-green-500 bg-white dark:bg-dark-800 text-center">
+      <p class="font-bold text-lg">TEST 2: Pre-AboutUs</p>
+    </div>
+
+    <div class="w-full min-h-screen py-12 bg-white dark:bg-gray-900">
       <AboutUsSeccion />
     </div>
-	<div class="snap-center max-md:snap-none max-md:min-h-screen">
-		<ServicesSeccion />
-	  </div>
-    <div class="snap-start max-md:snap-none max-md:py-12">
-      <OurProyectsSeccion />
+
+    <!-- TERCER TEST - Después de About Us -->
+    <div class="lg:hidden text-blue-500 p-4 border-2 border-blue-500 bg-white dark:bg-dark-800 text-center">
+      <p class="font-bold text-lg">TEST 3: Post-AboutUs</p>
     </div>
-    <div class="snap-center max-md:snap-none max-md:py-12">
-      <TestimonialSeccion />
-    </div>
-    <div class="snap-start max-md:snap-none max-md:py-12">
-      <ContacUsSeccion />
+
+    <div class="w-full min-h-screen">
+      <ServicesSeccion />
     </div>
   </main>
 </Layout>
