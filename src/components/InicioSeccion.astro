@@ -5,7 +5,7 @@ import { Phone, ArrowDown, HardHat, Home, Map } from "lucide-react";
 
 <!-- Sección para Desktop -->
 <section
-  class="hidden lg:flex bg-white h-screen w-screen text-center relative overflow-hidden z-30 justify-center items-center gap-40"
+  class="hidden lg:flex bg-white h-screen w-screen text-center relative overflow-hidden z-30 justify-center items-center gap-40" id="home"
 >
   <!-- Cards -->
   <div class="relative z-50">
@@ -16,7 +16,8 @@ import { Phone, ArrowDown, HardHat, Home, Map } from "lucide-react";
       subTitle="Experts in excavation and water solutions."
       title2="We lay the foundation for your next dream"
       paragraph="With over 10 years of experience, we provide top-quality excavation, demolition, trenching, land clearing, and water delivery services throughout Hawaii."
-      link="/projects"
+      link="#projects"
+      link2="#contact-us-section"
       tipo="simple"
     />
   </div>
@@ -24,89 +25,106 @@ import { Phone, ArrowDown, HardHat, Home, Map } from "lucide-react";
     <Card tipo="formulario" />
   </div>
 
-  <!-- Video de fondo -->
-  <div class="absolute top-0 left-0 w-full h-full z-10">
-    <video class="w-full h-full object-cover" autoplay muted loop src="/public/images/videos/video3.webm"></video>
+  <!-- Video de fondo corregido -->
+  <div class="absolute inset-0 z-10 bg-black">
+    <video class="w-full h-full object-cover" autoplay muted loop>
+      <source src="/images/videos/video3.webm" type="video/webm">
+      <source src="/images/videos/video3.mp4" type="video/mp4">
+      Your browser does not support the video tag.
+    </video>
   </div>
 </section>
 
-<!-- Sección para Móvil -->
-<section class="lg:hidden relative min-h-screen h-full w-screen overflow-hidden leading-none">
-  <!-- Video de fondo -->
-  <div class="absolute top-0 left-0 w-full h-full z-0">
-    <video class="w-full h-full object-cover" autoplay muted loop src="/public/images/videos/video3.webm"></video>
+<!-- Sección para Móvil - Versión optimizada -->
+<section class="lg:hidden relative w-full h-screen overflow-hidden">
+  <!-- Video de fondo optimizado -->
+  <div class="absolute inset-0 z-0 bg-black">
+    <video class="w-full h-full object-cover" autoplay muted loop playsinline>
+      <source src="/images/videos/video3.webm" type="video/webm">
+      <source src="/images/videos/video3.mp4" type="video/mp4">
+    </video>
   </div>
 
-  <!-- Overlay oscuro -->
-  <div class="fixed inset-0 bg-black/50 z-10"></div>
+  <!-- Overlay y contenido -->
+  <div class="absolute inset-0 z-10 flex flex-col justify-center items-center px-6 text-center text-white"
+       style="background: rgba(0,0,0,0.3);">
+    <div class="w-full max-w-md">
+      <div class="animate-fade-in-down">
+        <h1 class="text-4xl md:text-5xl font-extrabold mb-3 tracking-tight font-montserrat">BUILD YOUR VISION</h1>
+        <div class="w-24 h-1.5 bg-yellow-400 mb-6 mx-auto rounded-full"></div>
+      </div>
 
-  <!-- Contenido principal -->
-  <div
-    class="relative z-20 min-h-screen h-full flex flex-col justify-center items-center px-6 text-center text-white pb-20"
-  >
-    <!-- Título principal con animación -->
-    <div class="animate-fade-in-down">
-      <h1 class="text-5xl font-extrabold mb-3 tracking-tight font-montserrat">BUILD YOUR VISION</h1>
-      <div class="w-24 h-1.5 bg-yellow-400 mb-8 mx-auto rounded-full"></div>
-    </div>
-
-    <!-- Tarjeta principal con efecto 3D -->
-    <div
-      class="bg-white/10 backdrop-blur-lg rounded-2xl p-8 max-w-md w-full border border-white/20 shadow-2xl transform transition-all hover:scale-[1.02] duration-300"
-    >
-      <HardHat className="w-12 h-12 mx-auto mb-4 text-yellow-400" />
-      <h2 class="text-3xl font-bold mb-3 font-montserrat uppercase tracking-wide">TRANSFORM YOUR LAND</h2>
-      <p class="text-lg mb-6 leading-relaxed font-light font-open-sans">WE LAY THE FOUNDATION FOR YOUR NEXT DREAM</p>
-
-      <!-- Botón principal -->
-      <a
-        href="/projects"
-        class="inline-block bg-yellow-500 hover:bg-yellow-600 text-black font-bold py-4 px-8 rounded-xl mb-8 transition-all duration-300 transform hover:-translate-y-1 shadow-lg hover:shadow-xl uppercase tracking-wider text-sm font-montserrat"
-      >
-        VIEW OUR PROJECTS
-      </a>
-
-      <!-- Mini tarjetas de servicios -->
-      <div class="grid grid-cols-2 gap-3 mb-6">
-        <div class="bg-black/20 p-3 rounded-lg border border-white/10">
-          <Home className="w-6 h-6 mx-auto mb-2 text-yellow-400" />
-          <span class="text-xs font-medium font-open-sans">Residential</span>
-        </div>
-        <div class="bg-black/20 p-3 rounded-lg border border-white/10">
-          <Map className="w-6 h-6 mx-auto mb-2 text-yellow-400" />
-          <span class="text-xs font-medium font-open-sans">Land Clearing</span>
+      <div class="bg-white/10 backdrop-blur-lg rounded-2xl p-6 w-full border border-white/20 shadow-2xl mb-8">
+        <HardHat className="w-10 h-10 md:w-12 md:h-12 mx-auto mb-4 text-yellow-400" />
+        <h2 class="text-2xl md:text-3xl font-bold mb-3 font-montserrat uppercase tracking-wide">TRANSFORM YOUR LAND</h2>
+        <p class="text-base md:text-lg mb-6 leading-relaxed font-light font-open-sans">
+          WE LAY THE FOUNDATION FOR YOUR NEXT DREAM
+        </p>
+        <a href="/projects" class="inline-block bg-yellow-500 hover:bg-yellow-600 text-black font-bold py-3 px-6 md:py-4 md:px-8 rounded-xl mb-6 transition-all duration-300 uppercase tracking-wider text-sm font-montserrat">
+          VIEW OUR PROJECTS
+        </a>
+        <div class="grid grid-cols-2 gap-3">
+          <div class="bg-black/20 p-3 rounded-lg border border-white/10">
+            <Home className="w-5 h-5 md:w-6 md:h-6 mx-auto mb-2 text-yellow-400" />
+            <span class="text-xs font-medium font-open-sans">Residential</span>
+          </div>
+          <div class="bg-black/20 p-3 rounded-lg border border-white/10">
+            <Map className="w-5 h-5 md:w-6 md:h-6 mx-auto mb-2 text-yellow-400" />
+            <span class="text-xs font-medium font-open-sans">Land Clearing</span>
+          </div>
         </div>
       </div>
     </div>
-
-    <!-- Indicador para hacer scroll -->
-    <div class="absolute bottom-10 left-0 right-0 flex flex-col items-center animate-bounce">
-      <span class="text-sm font-medium mb-2 font-open-sans">EXPLORE MORE</span>
-      <ArrowDown className="w-6 h-6 text-yellow-400" />
-    </div>
   </div>
-
-  <!-- Fuentes -->
-  <style>
-    @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;900&family=Open+Sans:wght@300;400;600&display=swap");
-    .font-montserrat {
-      font-family: "Montserrat", sans-serif;
-    }
-    .font-open-sans {
-      font-family: "Open Sans", sans-serif;
-    }
-    .animate-fade-in-down {
-      animation: fadeInDown 1s ease-out forwards;
-    }
-    @keyframes fadeInDown {
-      0% {
-        opacity: 0;
-        transform: translateY(-20px);
-      }
-      100% {
-        opacity: 1;
-        transform: translateY(0);
-      }
-    }
-  </style>
 </section>
+
+<!-- Fuentes y estilos -->
+<style>
+  @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;900&family=Open+Sans:wght@300;400;600&display=swap");
+  
+  .font-montserrat {
+    font-family: "Montserrat", sans-serif;
+  }
+  
+  .font-open-sans {
+    font-family: "Open Sans", sans-serif;
+  }
+  
+  .animate-fade-in-down {
+    animation: fadeInDown 1s ease-out forwards;
+  }
+  
+  @keyframes fadeInDown {
+    0% {
+      opacity: 0;
+      transform: translateY(-20px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  /* Ajustes responsivos */
+  @media (max-width: 1023px) {
+    section + section {
+      margin-top: 0 !important;
+      padding-top: 0 !important;
+    }
+    
+    #contact-section {
+      margin-top: 0 !important;
+      padding-top: 2rem !important;
+    }
+    
+    .mobile-hero-section {
+      min-height: auto !important;
+      height: auto !important;
+      padding-bottom: 2rem !important;
+    }
+    
+    body, html {
+      overflow-x: hidden;
+    }
+  }
+</style>

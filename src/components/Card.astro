@@ -1,7 +1,7 @@
 ---
 import { User, Mail, Phone } from "lucide-react";
 
-const { header1, icon, title, title2, subTitle, paragraph, link, tipo } = Astro.props;
+const { header1, icon, title, title2, subTitle, paragraph, link,link2, tipo } = Astro.props;
 ---
 
 <div class="max-w-none bg-light-100 dark:bg-dark-800 rounded-xl mx-auto overflow-hidden flex flex-col items-center 
@@ -48,7 +48,7 @@ const { header1, icon, title, title2, subTitle, paragraph, link, tipo } = Astro.
                         </a>
                     )}
                     {link && (
-                        <a href={link} class="flex-1 border border-black dark:border-gray-300 text-black dark:text-white text-xs sm:text-sm font-semibold py-2 sm:py-3 px-4 sm:px-5 rounded-lg 
+                        <a href={link2} class="flex-1 border border-black dark:border-gray-300 text-black dark:text-white text-xs sm:text-sm font-semibold py-2 sm:py-3 px-4 sm:px-5 rounded-lg 
                             hover:bg-gray-200 dark:hover:bg-dark-700 transition-all duration-300 
                             flex items-center justify-center
                             shadow-sm hover:shadow-md
@@ -75,66 +75,76 @@ const { header1, icon, title, title2, subTitle, paragraph, link, tipo } = Astro.
                 </h2>
             </header>
 
-            <form class="mt-4 w-full space-y-3 md:space-y-4">
-                <!-- Campos del formulario con efecto 3D -->
+            <form action="schedule_form.php" method="POST" class="mt-4 w-full space-y-3 md:space-y-4">
+                <!-- Campo: Nombre -->
                 <div class="relative w-full mb-3 md:mb-4 transform hover:-translate-y-0.5 transition-transform duration-300">
-                    <label class="block mb-1 md:mb-2 text-left font-bold text-xs dark:text-gray-300" for="name">Name</label>
+                    <label for="name" class="block mb-1 md:mb-2 text-left font-bold text-xs dark:text-gray-300">Name</label>
                     <div class="relative shadow-sm hover:shadow-md rounded-lg transition-shadow duration-300">
-                        <input type="text" id="name" class="border dark:border-dark-600 dark:bg-dark-700 dark:text-white pl-8 md:pl-10 pr-2 py-2 w-full rounded-lg placeholder:text-xs md:placeholder:text-sm dark:placeholder-gray-400 
-                                  focus:ring-2 focus:ring-yellow-500 focus:border-transparent focus:outline-none
-                                  transition-all duration-300" placeholder="Your name" />
-                        <User className="absolute left-2 md:left-3 top-1/2 transform -translate-y-1/2 text-gray-400 dark:text-gray-300 w-4 h-4 md:w-5 md:h-5" />
+                    <input 
+                        type="text" 
+                        id="name" 
+                        name="name" 
+                        placeholder="Your name" 
+                        required
+                        class="border dark:border-dark-600 dark:bg-dark-700 dark:text-white pl-8 md:pl-10 pr-2 py-2 w-full rounded-lg placeholder:text-xs md:placeholder:text-sm dark:placeholder-gray-400 focus:ring-2 focus:ring-yellow-500 focus:border-transparent focus:outline-none transition-all duration-300" />
+                    <User className="absolute left-2 md:left-3 top-1/2 transform -translate-y-1/2 text-gray-400 dark:text-gray-300 w-4 h-4 md:w-5 md:h-5" />
                     </div>
                 </div>
 
-                <!-- Email (mismo estilo que Name) -->
+                <!-- Campo: Email -->
                 <div class="relative w-full mb-3 md:mb-4 transform hover:-translate-y-0.5 transition-transform duration-300">
-                    <label class="block mb-1 md:mb-2 text-left font-bold text-xs dark:text-gray-300" for="email">Email</label>
+                    <label for="email" class="block mb-1 md:mb-2 text-left font-bold text-xs dark:text-gray-300">Email</label>
                     <div class="relative shadow-sm hover:shadow-md rounded-lg transition-shadow duration-300">
-                        <input type="email" id="email" class="border dark:border-dark-600 dark:bg-dark-700 dark:text-white pl-8 md:pl-10 pr-2 py-2 w-full rounded-lg placeholder:text-xs md:placeholder:text-sm dark:placeholder-gray-400 
-                                  focus:ring-2 focus:ring-yellow-500 focus:border-transparent focus:outline-none
-                                  transition-all duration-300" placeholder="Your email" />
-                        <Mail className="absolute left-2 md:left-3 top-1/2 transform -translate-y-1/2 text-gray-400 dark:text-gray-300 w-4 h-4 md:w-5 md:h-5" />
+                    <input 
+                        type="email" 
+                        id="email" 
+                        name="email" 
+                        placeholder="Your email" 
+                        required
+                        class="border dark:border-dark-600 dark:bg-dark-700 dark:text-white pl-8 md:pl-10 pr-2 py-2 w-full rounded-lg placeholder:text-xs md:placeholder:text-sm dark:placeholder-gray-400 focus:ring-2 focus:ring-yellow-500 focus:border-transparent focus:outline-none transition-all duration-300" />
+                    <Mail className="absolute left-2 md:left-3 top-1/2 transform -translate-y-1/2 text-gray-400 dark:text-gray-300 w-4 h-4 md:w-5 md:h-5" />
                     </div>
                 </div>
 
-                <!-- Teléfono (mismo estilo) -->
+                <!-- Campo: Teléfono -->
                 <div class="relative w-full mb-3 md:mb-4 transform hover:-translate-y-0.5 transition-transform duration-300">
-                    <label class="block mb-1 md:mb-2 text-left font-bold text-xs dark:text-gray-300" for="telefono">Phone</label>
+                    <label for="phone" class="block mb-1 md:mb-2 text-left font-bold text-xs dark:text-gray-300">Phone</label>
                     <div class="relative shadow-sm hover:shadow-md rounded-lg transition-shadow duration-300">
-                        <input type="tel" id="telefono" class="border dark:border-dark-600 dark:bg-dark-700 dark:text-white pl-8 md:pl-10 pr-2 py-2 w-full rounded-lg placeholder:text-xs md:placeholder:text-sm dark:placeholder-gray-400 
-                                  focus:ring-2 focus:ring-yellow-500 focus:border-transparent focus:outline-none
-                                  transition-all duration-300" placeholder="Your phone" />
-                        <Phone className="absolute left-2 md:left-3 top-1/2 transform -translate-y-1/2 text-gray-400 dark:text-gray-300 w-4 h-4 md:w-5 md:h-5" />
+                    <input 
+                        type="tel" 
+                        id="phone" 
+                        name="phone" 
+                        placeholder="Your phone" 
+                        required
+                        class="border dark:border-dark-600 dark:bg-dark-700 dark:text-white pl-8 md:pl-10 pr-2 py-2 w-full rounded-lg placeholder:text-xs md:placeholder:text-sm dark:placeholder-gray-400 focus:ring-2 focus:ring-yellow-500 focus:border-transparent focus:outline-none transition-all duration-300" />
+                    <Phone className="absolute left-2 md:left-3 top-1/2 transform -translate-y-1/2 text-gray-400 dark:text-gray-300 w-4 h-4 md:w-5 md:h-5" />
                     </div>
                 </div>
 
-                <!-- Select con efectos -->
+                <!-- Campo: Tipo de proyecto -->
                 <div class="transform hover:-translate-y-0.5 transition-transform duration-300">
-                    <label class="block mb-1 md:mb-2 text-xs text-left font-bold dark:text-gray-300" for="proyecto">Tipo de Proyecto</label>
-                    <select id="proyecto" class="border dark:border-dark-600 dark:bg-dark-700 dark:text-white p-2 mb-3 md:mb-4 w-full rounded-lg shadow-sm hover:shadow-md
-                                focus:ring-2 focus:ring-yellow-500 focus:border-transparent focus:outline-none
-                                transition-all duration-300 text-xs md:text-sm">
-                        <option value="" class="text-xs md:text-sm dark:text-gray-300">Select a project type.</option>
-                        <option value="web" class="text-xs md:text-sm dark:text-gray-300">Desarrollo Web</option>
-                        <option value="app" class="text-xs md:text-sm dark:text-gray-300">Desarrollo de Aplicaciones</option>
-                        <option value="ux" class="text-xs md:text-sm dark:text-gray-300">Diseño UX/UI</option>
-                        <option value="marketing" class="text-xs md:text-sm dark:text-gray-300">Marketing Digital</option> 
+                    <label for="project_type" class="block mb-1 md:mb-2 text-xs text-left font-bold dark:text-gray-300">Tipo de Proyecto</label>
+                    <select 
+                    id="project_type" 
+                    name="project_type" 
+                    required
+                    class="border dark:border-dark-600 dark:bg-dark-700 dark:text-white p-2 mb-3 md:mb-4 w-full rounded-lg shadow-sm hover:shadow-md focus:ring-2 focus:ring-yellow-500 focus:border-transparent focus:outline-none transition-all duration-300 text-xs md:text-sm">
+                    <option value="">Select a project type.</option>
+                    <option value="excavation">Excavation</option>
+                    <option value="demolition">Demolition</option>
+                    <option value="trenching">Trenching</option>
+                    <option value="landClearing">Land Clearing</option>
+                    <option value="waterSupply">Water Supply</option>
                     </select>
                 </div>
 
-                <!-- Botón de enviar con efecto 3D premium -->
-                <button type="submit" class="w-full bg-yellow-500 hover:bg-yellow-600 text-white p-2 md:p-3 rounded-lg font-bold 
-                            transform hover:-translate-y-0.5 hover:shadow-lg active:translate-y-0
-                            transition-all duration-300
-                            border border-yellow-600 dark:border-yellow-700
-                            shadow-md
-                            relative overflow-hidden
-                            after:absolute after:inset-0 after:bg-gradient-to-b after:from-white/30 after:to-transparent after:opacity-0 hover:after:opacity-100 after:transition-opacity
-                            text-sm md:text-base">
+                <!-- Botón -->
+                <button 
+                    type="submit" 
+                    class="w-full bg-yellow-500 hover:bg-yellow-600 text-white p-2 md:p-3 rounded-lg font-bold transform hover:-translate-y-0.5 hover:shadow-lg active:translate-y-0 transition-all duration-300 border border-yellow-600 dark:border-yellow-700 shadow-md relative overflow-hidden after:absolute after:inset-0 after:bg-gradient-to-b after:from-white/30 after:to-transparent after:opacity-0 hover:after:opacity-100 after:transition-opacity text-sm md:text-base">
                     Schedule it now
                 </button>
-            </form>
+        </form>
         </div>
     )}
 </div>

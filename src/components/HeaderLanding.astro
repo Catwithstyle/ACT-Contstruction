@@ -2,23 +2,24 @@
   id="header-landing"
   class="py-0 px-4 sm:px-6 lg:px-10 flex items-center justify-between fixed top-0 w-full z-50 h-[65px] bg-light-100 font-sans p-4 dark:bg-dark-700 transition-all duration-300 shadow-sm dark:shadow-lg dark:border-b dark:border-dark-600"
 >
-  <!-- Logo -->
-  <div class="flex items-center h-full z-50">
+  <!-- Logo - Ajustado para estar casi pegado a los links -->
+  <div class="flex items-center h-full z-50 md:ml-32 lg:ml-40 xl:ml-48">
     <img
       src="/images/iconC.svg"
       alt="Título"
       class="h-20 md:h-24 lg:h-28 w-auto mt-1 md:mt-2 lg:mt-3"
-      style="filter: invert(76%) sepia(29%) saturate(1833%) hue-rotate(330deg) brightness(102%) contrast(101%)"
+      style="filter: drop-shadow(0 0 5px rgba(0, 0, 0, 0.2))"
     />
   </div>
 
   <!-- Botón hamburguesa para móviles -->
   <button
     id="mobile-menu-button"
-    class="md:hidden p-2 rounded-md text-gray-700 dark:text-gray-200 hover:text-yellow-500 dark:hover:text-yellow-400 focus:outline-none z-50"
+    class="md:hidden p-2 rounded-md text-gray-700 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-dark-600 focus:outline-none z-50 transition-colors duration-200 ml-auto"
+    aria-label="Menú móvil"
   >
-    <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+    <svg class="h-7 w-7" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
+      <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5"></path>
     </svg>
   </button>
 
@@ -29,8 +30,19 @@
     >
       <li>
         <a
-          href="#"
-          class="relative group hover:text-yellow-500 dark:hover:text-yellow-400 transition-colors duration-300"
+          href="#home"
+          class="relative group active-link hover:text-yellow-500 dark:hover:text-yellow-400 transition-colors duration-300"
+        >
+          Home
+          <span
+            class="absolute left-0 bottom-0 w-full h-0.5 bg-yellow-500 dark:bg-yellow-400 transition-all duration-300"
+          ></span>
+        </a>
+      </li>
+      <li>
+        <a
+          href="#about"
+          class="relative group nav-link hover:text-yellow-500 dark:hover:text-yellow-400 transition-colors duration-300"
         >
           About Us
           <span
@@ -40,30 +52,8 @@
       </li>
       <li>
         <a
-          href="#"
-          class="relative group hover:text-yellow-500 dark:hover:text-yellow-400 transition-colors duration-300"
-        >
-          Projects
-          <span
-            class="absolute left-1/2 bottom-0 w-0 h-0.5 bg-yellow-500 dark:bg-yellow-400 group-hover:w-full group-hover:left-0 transition-all duration-500"
-          ></span>
-        </a>
-      </li>
-      <li>
-        <a
-          href="#"
-          class="relative group hover:text-yellow-500 dark:hover:text-yellow-400 transition-colors duration-300"
-        >
-          Clients
-          <span
-            class="absolute left-1/2 bottom-0 w-0 h-0.5 bg-yellow-500 dark:bg-yellow-400 group-hover:w-full group-hover:left-0 transition-all duration-500"
-          ></span>
-        </a>
-      </li>
-      <li>
-        <a
-          href="#"
-          class="relative group hover:text-yellow-500 dark:hover:text-yellow-400 transition-colors duration-300"
+          href="#services"
+          class="relative group nav-link hover:text-yellow-500 dark:hover:text-yellow-400 transition-colors duration-300"
         >
           Services
           <span
@@ -73,10 +63,32 @@
       </li>
       <li>
         <a
-          href="#"
-          class="relative group hover:text-yellow-500 dark:hover:text-yellow-400 transition-colors duration-300"
+          href="#projects"
+          class="relative group nav-link hover:text-yellow-500 dark:hover:text-yellow-400 transition-colors duration-300"
         >
-          Information
+          Proyects
+          <span
+            class="absolute left-1/2 bottom-0 w-0 h-0.5 bg-yellow-500 dark:bg-yellow-400 group-hover:w-full group-hover:left-0 transition-all duration-500"
+          ></span>
+        </a>
+      </li>
+      <li>
+        <a
+          href="#testimonials-section"
+          class="relative group nav-link hover:text-yellow-500 dark:hover:text-yellow-400 transition-colors duration-300"
+        >
+          Clients
+          <span
+            class="absolute left-1/2 bottom-0 w-0 h-0.5 bg-yellow-500 dark:bg-yellow-400 group-hover:w-full group-hover:left-0 transition-all duration-500"
+          ></span>
+        </a>
+      </li>
+      <li>
+        <a
+          href="#contact-us-section"
+          class="relative group nav-link hover:text-yellow-500 dark:hover:text-yellow-400 transition-colors duration-300"
+        >
+          Contact Us
           <span
             class="absolute left-1/2 bottom-0 w-0 h-0.5 bg-yellow-500 dark:bg-yellow-400 group-hover:w-full group-hover:left-0 transition-all duration-300"
           ></span>
@@ -90,7 +102,7 @@
     <button
       id="theme-toggle"
       aria-label="Toggle Dark Mode"
-      class="relative w-10 h-5 sm:w-12 sm:h-6 rounded-full bg-gray-200 dark:bg-gray-600 focus:outline-none transition-colors duration-300 group"
+      class="relative w-10 h-5 sm:w-12 sm:h-6 rounded-full bg-gray-200 dark:bg-gray-600 focus:outline-none transition-colors duration-300 group hover:ring-2 hover:ring-yellow-400/30"
     >
       <!-- Sol (Light) -->
       <svg
@@ -134,37 +146,44 @@
         <ul class="space-y-6">
           <li>
             <a
-              href="#"
-              class="block text-lg font-medium text-gray-900 dark:text-gray-200 hover:text-yellow-500 dark:hover:text-yellow-400 py-2 border-b border-gray-200 dark:border-gray-600"
+              href="#home"
+              class="block text-lg font-medium text-gray-900 dark:text-gray-200 hover:text-yellow-500 dark:hover:text-yellow-400 py-3 border-b border-gray-200 dark:border-gray-600 transition-colors duration-200 active-mobile-link"
+              >Home</a
+            >
+          </li>
+          <li>
+            <a
+              href="#about"
+              class="block text-lg font-medium text-gray-900 dark:text-gray-200 hover:text-yellow-500 dark:hover:text-yellow-400 py-3 border-b border-gray-200 dark:border-gray-600 transition-colors duration-200 mobile-link"
               >About Us</a
             >
           </li>
           <li>
             <a
-              href="#"
-              class="block text-lg font-medium text-gray-900 dark:text-gray-200 hover:text-yellow-500 dark:hover:text-yellow-400 py-2 border-b border-gray-200 dark:border-gray-600"
-              >Projects</a
-            >
-          </li>
-          <li>
-            <a
-              href="#"
-              class="block text-lg font-medium text-gray-900 dark:text-gray-200 hover:text-yellow-500 dark:hover:text-yellow-400 py-2 border-b border-gray-200 dark:border-gray-600"
-              >Clients</a
-            >
-          </li>
-          <li>
-            <a
-              href="#"
-              class="block text-lg font-medium text-gray-900 dark:text-gray-200 hover:text-yellow-500 dark:hover:text-yellow-400 py-2 border-b border-gray-200 dark:border-gray-600"
+              href="#services"
+              class="block text-lg font-medium text-gray-900 dark:text-gray-200 hover:text-yellow-500 dark:hover:text-yellow-400 py-3 border-b border-gray-200 dark:border-gray-600 transition-colors duration-200 mobile-link"
               >Services</a
             >
           </li>
           <li>
             <a
-              href="#"
-              class="block text-lg font-medium text-gray-900 dark:text-gray-200 hover:text-yellow-500 dark:hover:text-yellow-400 py-2 border-b border-gray-200 dark:border-gray-600"
-              >Information</a
+              href="#testimonials-section"
+              class="block text-lg font-medium text-gray-900 dark:text-gray-200 hover:text-yellow-500 dark:hover:text-yellow-400 py-3 border-b border-gray-200 dark:border-gray-600 transition-colors duration-200 mobile-link"
+              >Clients</a
+            >
+          </li>
+          <li>
+            <a
+              href="#projects"
+              class="block text-lg font-medium text-gray-900 dark:text-gray-200 hover:text-yellow-500 dark:hover:text-yellow-400 py-3 border-b border-gray-200 dark:border-gray-600 transition-colors duration-200 mobile-link"
+              >Proyects</a
+            >
+          </li>
+          <li>
+            <a
+              href="#contact-us-section"
+              class="block text-lg font-medium text-gray-900 dark:text-gray-200 hover:text-yellow-500 dark:hover:text-yellow-400 py-3 border-b border-gray-200 dark:border-gray-600 transition-colors duration-200 mobile-link"
+              >Contact Us</a
             >
           </li>
         </ul>
@@ -174,7 +193,7 @@
         <button
           id="mobile-theme-toggle"
           aria-label="Toggle Dark Mode"
-          class="relative w-12 h-6 rounded-full bg-gray-200 dark:bg-gray-600 focus:outline-none transition-colors duration-300 group"
+          class="relative w-12 h-6 rounded-full bg-gray-200 dark:bg-gray-600 focus:outline-none transition-colors duration-300 group hover:ring-2 hover:ring-yellow-400/30"
         >
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -211,7 +230,7 @@
     const html = document.documentElement;
     const mobileMenuButton = document.getElementById("mobile-menu-button");
     const mobileMenu = document.getElementById("mobile-menu");
-    const mobileMenuPanel = mobileMenu!.querySelector("div");
+    const mobileMenuPanel = mobileMenu ? mobileMenu.querySelector("div") : null;
 
     // Toggle del tema
     function toggleTheme() {
@@ -230,38 +249,97 @@
     if (mobileToggle) mobileToggle.addEventListener("click", toggleTheme);
 
     // Menú móvil
-    mobileMenuButton!.addEventListener("click", () => {
-      mobileMenu!.classList.toggle("opacity-0");
-      mobileMenu!.classList.toggle("pointer-events-none");
-      mobileMenuPanel!.classList.toggle("translate-x-full");
-      document.body.classList.toggle("overflow-hidden");
-    });
+    if (mobileMenuButton && mobileMenu && mobileMenuPanel) {
+      mobileMenuButton.addEventListener("click", () => {
+        mobileMenu.classList.toggle("opacity-0");
+        mobileMenu.classList.toggle("pointer-events-none");
+        mobileMenuPanel.classList.toggle("translate-x-full");
+        document.body.classList.toggle("overflow-hidden");
+      });
+    }
 
     // Cerrar menú al hacer clic en un enlace
-    mobileMenu!.querySelectorAll("a").forEach(link => {
-      link.addEventListener("click", () => {
-        mobileMenu!.classList.add("opacity-0", "pointer-events-none");
-        mobileMenuPanel!.classList.add("translate-x-full");
-        document.body.classList.remove("overflow-hidden");
+
+    if (mobileMenu && mobileMenuPanel) {
+      mobileMenu.querySelectorAll("a").forEach(link => {
+        link.addEventListener("click", () => {
+          mobileMenu.classList.add("opacity-0", "pointer-events-none");
+          mobileMenuPanel.classList.add("translate-x-full");
+          document.body.classList.remove("overflow-hidden");
+        });
       });
-    });
+    }
 
     // Cerrar menú al hacer clic fuera
-    mobileMenu!.addEventListener("click", e => {
-      if (e.target === mobileMenu) {
-        mobileMenu!.classList.add("opacity-0", "pointer-events-none");
-        mobileMenuPanel!.classList.add("translate-x-full");
-        document.body.classList.remove("overflow-hidden");
-      }
-    });
+    if (mobileMenu && mobileMenuPanel) {
+      mobileMenu.addEventListener("click", e => {
+        if (e.target === mobileMenu) {
+          mobileMenu.classList.add("opacity-0", "pointer-events-none");
+          mobileMenuPanel.classList.add("translate-x-full");
+          document.body.classList.remove("overflow-hidden");
+        }
+      });
+    }
 
     // Ajustar menú en resize
-    window.addEventListener("resize", () => {
-      if (window.innerWidth >= 768) {
-        mobileMenu!.classList.add("opacity-0", "pointer-events-none");
-        mobileMenuPanel!.classList.add("translate-x-full");
-        document.body.classList.remove("overflow-hidden");
+
+    if (mobileMenu && mobileMenuPanel) {
+      window.addEventListener("resize", () => {
+        if (window.innerWidth >= 768) {
+          mobileMenu.classList.add("opacity-0", "pointer-events-none");
+          mobileMenuPanel.classList.add("translate-x-full");
+          document.body.classList.remove("overflow-hidden");
+        }
+      });
+    }
+
+    // Lógica para la línea amarilla activa
+    function setActiveLink() {
+      const currentHash = window.location.hash || "#home";
+      const navLinks = document.querySelectorAll(".nav-link");
+      const mobileLinks = document.querySelectorAll(".mobile-link");
+
+      // Reset all links
+      document.querySelectorAll(".active-link").forEach(link => {
+        link.classList.remove("active-link");
+        link.classList.add("nav-link");
+        const underline = link.querySelector("span");
+        if (underline) {
+          underline.classList.remove("left-0", "w-full");
+          underline.classList.add("left-1/2", "w-0");
+        }
+      });
+
+      document.querySelectorAll(".active-mobile-link").forEach(link => {
+        link.classList.remove("active-mobile-link");
+        link.classList.add("mobile-link");
+      });
+
+      // Set new active link
+      const activeLink = document.querySelector(`a[href="${currentHash}"]`);
+      if (activeLink) {
+        if (activeLink.classList.contains("mobile-link")) {
+          activeLink.classList.remove("mobile-link");
+          activeLink.classList.add("active-mobile-link");
+        } else {
+          activeLink.classList.remove("nav-link");
+          activeLink.classList.add("active-link");
+          const underline = activeLink.querySelector("span");
+          if (underline) {
+            underline.classList.remove("left-1/2", "w-0");
+            underline.classList.add("left-0", "w-full");
+          }
+        }
       }
-    });
+    }
+
+    // Set home as default active
+    if (!window.location.hash) {
+      window.location.hash = "home";
+    }
+
+    // Initialize and listen for hash changes
+    setActiveLink();
+    window.addEventListener("hashchange", setActiveLink);
   });
 </script>

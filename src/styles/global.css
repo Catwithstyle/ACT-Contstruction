@@ -26,3 +26,56 @@ section {
   margin: 0;
   padding: 0;
 }
+/* Elimina espacios no deseados en móvil */
+@media (max-width: 1023px) {
+  #testimonials-section {
+    display: none !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    height: 0 !important;
+    min-height: 0 !important;
+  }
+  
+  /* Asegura que las secciones adyacentes no tengan margen superior/inferior */
+  section + #testimonials-section,
+  #testimonials-section + section {
+    margin-top: 0 !important;
+    padding-top: 0 !important;
+  }
+}
+/* Elimina márgenes no deseados en el cuerpo */
+body {
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+}
+
+/* Asegura que las secciones no tengan espacio extra */
+section {
+  margin: 0;
+  padding: 0;
+}
+
+/* Asegura que las secciones se comporten correctamente */
+@media (max-width: 767px) {
+  .mobile-70vh {
+    min-height: 70vh !important;
+    height: auto;
+  }
+}
+@media (min-width: 768px) {
+  .desktop-100vh {
+    min-height: 100vh !important;
+  }
+}
+/* Asegurar que no hay espacio extra al final */
+html, body {
+  overflow-x: hidden;
+  margin: 0;
+  padding: 0;
+}
+
+/* Ajustar el footer para que termine justo al final */
+footer {
+  width: 100%;
+}

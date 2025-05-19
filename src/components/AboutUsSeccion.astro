@@ -1,56 +1,198 @@
 ---
 import StatsSeccion from './StatsSeccion.astro';
+import { ArrowRight } from 'lucide-react';
+import { Construction, Hammer, LandPlot, Droplet } from 'lucide-react';
+import { ArrowDownWideNarrow } from 'lucide-react';
 ---
 
-<!-- Sección optimizada para móvil y desktop -->
-<section id="about" class="w-full bg-white z-10 dark:bg-dark-800 py-12 md:py-20 relative">
+<!-- ============================================== -->
+<!-- Sección About - Versión Móvil                   -->
+<!-- ============================================== -->
+<section id="about-mobile" class="lg:hidden w-full bg-white dark:bg-dark-800 py-12 md:py-20 relative min-h-[70vh]">
   <!-- Fondo decorativo -->
   <div class="absolute inset-0 overflow-hidden z-0 opacity-10 dark:opacity-5">
-    <div class="absolute top-20 left-10 w-3 h-3 rounded-full bg-yellow-400 animate-float1"></div>
-    <div class="absolute top-1/3 right-20 w-2 h-2 rounded-full bg-yellow-500 animate-float2"></div>
-    <div class="absolute bottom-1/4 left-1/4 w-4 h-4 rounded-full bg-yellow-300 animate-float3"></div>
+    <div class="absolute top-20 left-10 w-3 h-3 rounded-full bg-yellow-400 animate-float1 shadow-lg shadow-yellow-400/30"></div>
+    <div class="absolute top-1/3 right-20 w-2 h-2 rounded-full bg-yellow-500 animate-float2 shadow-lg shadow-yellow-500/30"></div>
+    <div class="absolute bottom-1/4 left-1/4 w-4 h-4 rounded-full bg-yellow-300 animate-float3 shadow-lg shadow-yellow-300/30"></div>
   </div>
 
-  <div class="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-    <!-- Encabezado -->
-    <div class="text-center mb-12">
-      <span class="inline-block px-3 py-1 text-xs font-semibold text-yellow-600 dark:text-yellow-400 bg-yellow-50 dark:bg-yellow-900/30 rounded-full mb-4">
-        OUR STORY
-      </span>
-      <h2 class="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-4">
-        Building Hawaii's <span class="text-yellow-500 dark:text-yellow-400">Future</span>
-      </h2>
-      <div class="mx-auto w-24 h-1.5 bg-gradient-to-r from-yellow-400 to-yellow-500 dark:from-yellow-500 dark:to-yellow-400 rounded-full"></div>
-    </div>
-
-    <!-- Contenido principal -->
-    <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
-      <!-- Columna de texto -->
-      <div class="space-y-6">
-        <div class="bg-white dark:bg-dark-700 p-6 rounded-xl shadow-sm border border-gray-200 dark:border-dark-600">
-          <h3 class="text-xl md:text-2xl font-bold text-gray-900 dark:text-white mb-3">Family Legacy</h3>
-          <p class="text-gray-700 dark:text-gray-300">
-            Founded over 10 years ago by the Rodriguez family, ACT Construction & Water Solutions has grown from a small local operation to a trusted name in Hawaii's construction industry. Our family-owned business brings pride and dedication to every project.
-          </p>
-        </div>
-
-        <div class="border-l-4 border-yellow-400 bg-gray-50 dark:bg-dark-700 pl-6 py-4 rounded-r-lg">
-          <p class="text-gray-700 dark:text-gray-300 italic">
-            "What started as my father's vision has become our family's mission - to deliver exceptional service with aloha spirit."
-          </p>
-        </div>
+  <div class="container mx-auto px-4 sm:px-6 relative z-10 h-full flex items-center">
+    <div class="w-full">
+      <!-- Encabezado -->
+      <div class="text-center mb-12 relative">
+        <span class="inline-block px-3 py-1 text-xs font-semibold text-yellow-700 dark:text-yellow-300 bg-yellow-100 dark:bg-yellow-900/40 rounded-full mb-4 shadow-sm">
+          OUR STORY
+        </span>
+        <h2 class="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-4 relative">
+          <span class="relative inline-block">
+            Building Hawaii's 
+            <span class="text-yellow-500 dark:text-yellow-400">Future</span>
+            <span class="absolute bottom-0 left-0 w-full h-1 bg-gradient-to-r from-yellow-400 to-yellow-500 dark:from-yellow-500 dark:to-yellow-400 rounded-full transform translate-y-2"></span>
+          </span>
+        </h2>
+        <div class="mx-auto w-24 h-1.5 bg-gradient-to-r from-yellow-400 to-yellow-500 dark:from-yellow-500 dark:to-yellow-400 rounded-full shadow-md shadow-yellow-400/30"></div>
       </div>
 
-      <!-- Columna de stats/imagen -->
-      <div class="bg-gray-50 dark:bg-dark-700 p-6 rounded-xl border border-gray-200 dark:border-dark-600">
-        <StatsSeccion />
+      <!-- Contenido principal -->
+      <div class="grid grid-cols-1 gap-8">
+        <!-- Columna de texto -->
+        <div class="space-y-6">
+          <div class="bg-white dark:bg-dark-700 p-6 rounded-xl shadow-lg border border-gray-200 dark:border-dark-600 h-full transition-all duration-300 hover:shadow-xl relative overflow-hidden">
+            <div class="absolute -right-10 -top-10 w-32 h-32 rounded-full bg-yellow-100 dark:bg-yellow-900/20 opacity-30"></div>
+            <h3 class="text-xl md:text-2xl font-bold text-gray-900 dark:text-white mb-3 relative z-10">
+              <span class="relative">
+                Family Legacy
+                <span class="absolute bottom-0 left-0 w-8 h-0.5 bg-yellow-400 dark:bg-yellow-500 transform translate-y-1"></span>
+              </span>
+            </h3>
+            <p class="text-gray-700 dark:text-gray-300 relative z-10">
+              Founded over 10 years ago by the Rodriguez family, ACT Construction & Water Solutions has grown from a small local operation to a trusted name in Hawaii's construction industry.
+            </p>
+          </div>
+
+          <div class="border-l-4 border-yellow-400 bg-gray-50 dark:bg-dark-700 pl-6 py-4 rounded-r-lg shadow-sm transition-all duration-300 hover:shadow-md relative">
+            <div class="absolute -left-1 top-4 w-2 h-2 rounded-full bg-yellow-400"></div>
+            <p class="text-gray-700 dark:text-gray-300 italic relative pl-4">
+              "What started as my father's vision has become our family's mission - to deliver exceptional service with aloha spirit."
+            </p>
+          </div>
+        </div>
+
+        <!-- Columna de stats/imagen -->
+        <div class="bg-gray-50 dark:bg-dark-700 p-6 rounded-xl border border-gray-200 dark:border-dark-600 shadow-lg transition-all duration-300 hover:shadow-xl relative">
+          <div class="relative z-10">
+            <StatsSeccion />
+          </div>
+        </div>
       </div>
     </div>
   </div>
 </section>
 
+<!-- ============================================== -->
+<!-- Sección About - Versión Desktop                -->
+<!-- ============================================== -->
+<section id="about" class="hidden lg:block w-full bg-white dark:bg-dark-800 py-28 relative">
+  <!-- Fondo decorativo mejorado -->
+  <div class="absolute inset-0 overflow-hidden z-0 opacity-10 dark:opacity-5">
+    <div class="absolute top-20 left-10 w-3 h-3 rounded-full bg-yellow-400 animate-float1 shadow-lg shadow-yellow-400/30"></div>
+    <div class="absolute top-1/3 right-20 w-2 h-2 rounded-full bg-yellow-500 animate-float2 shadow-lg shadow-yellow-500/30"></div>
+    <div class="absolute bottom-1/4 left-1/4 w-4 h-4 rounded-full bg-yellow-300 animate-float3 shadow-lg shadow-yellow-300/30"></div>
+  </div>
+
+  <div class="container mx-auto px-6 lg:px-8 relative z-10">
+    <!-- Encabezado mejorado -->
+    <div class="text-center mb-16">
+      <span class="inline-block px-4 py-2 text-sm font-semibold text-yellow-700 dark:text-yellow-300 bg-yellow-100 dark:bg-yellow-900/40 rounded-full mb-6 shadow-sm border border-yellow-200 dark:border-yellow-800">
+        NUESTRA HISTORIA
+      </span>
+      <h2 class="text-4xl lg:text-5xl font-bold text-gray-900 dark:text-white mb-6">
+        Construyendo <span class="text-yellow-500 dark:text-yellow-400">Futuros</span> en Hawaii
+      </h2>
+      <p class="text-lg text-gray-600 dark:text-gray-300 max-w-4xl mx-auto mb-8">
+        For over a decade, ACT Construction & Water Solutions has been the backbone of Hawaii's infrastructure development.
+      </p>
+      <div class="mx-auto w-32 h-1.5 bg-gradient-to-r from-yellow-400 to-yellow-500 dark:from-yellow-500 dark:to-yellow-400 rounded-full mb-8"></div>
+    </div>
+
+    <!-- Contenido expandido para desktop -->
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+      <!-- Columna de texto enriquecida -->
+      <div class="space-y-8">
+        <div class="bg-white dark:bg-dark-700 p-8 rounded-xl shadow-lg border border-gray-200 dark:border-dark-600 transition-all duration-300 hover:shadow-xl">
+          <h3 class="text-2xl font-bold text-gray-900 dark:text-white mb-4 flex items-center">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-yellow-500 mr-3" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
+            </svg>
+            <span>Legado Familiar</span>
+          </h3>
+          <p class="text-gray-700 dark:text-gray-300 mb-4">
+            Fundada hace más de 10 Años, ACT Construction & Water Solutions ha crecido desde una pequeña operación local hasta convertirse en un nombre confiable en la industria de la construcción de Hawaii.
+          </p>
+          <p class="text-gray-700 dark:text-gray-300">
+            Nuestro negocio  aporta orgullo y dedicación a cada proyecto, manteniendo los valores tradicionales hawaianos mientras adoptamos las últimas tecnologías de construcción.
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <div class="bg-yellow-50 dark:bg-yellow-900/20 p-6 rounded-lg border border-yellow-100 dark:border-yellow-800">
+            <h4 class="font-semibold text-gray-800 dark:text-white mb-2 flex items-center">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-yellow-500 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z" />
+              </svg>
+              Nuestra Misión
+            </h4>
+            <p class="text-gray-600 dark:text-gray-300 text-sm">
+              Proporcionar soluciones de construcción innovadoras que respeten el medio ambiente y la cultura local.
+            </p>
+          </div>
+          <div class="bg-yellow-50 dark:bg-yellow-900/20 p-6 rounded-lg border border-yellow-100 dark:border-yellow-800">
+            <h4 class="font-semibold text-gray-800 dark:text-white mb-2 flex items-center">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-yellow-500 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+              </svg>
+              Nuestra Promesa
+            </h4>
+            <p class="text-gray-600 dark:text-gray-300 text-sm">
+              Calidad certificada en cada proyecto, cumpliendo con los más altos estándares de la industria.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Columna de imagen y stats -->
+      <div class="relative">
+        <div class="relative rounded-xl overflow-hidden shadow-2xl">
+          <img src="/images/maquina1.webp" alt="Equipo de construcción" class="w-full h-auto object-cover">
+          <div class="absolute inset-0 bg-gradient-to-t from-gray-900/70 to-transparent"></div>
+          <div class="absolute bottom-0 left-0 p-6 text-white">
+            <p class="text-lg italic">"Construimos no solo estructuras, sino relaciones duraderas con nuestra comunidad"</p>
+            <p class="text-yellow-300 mt-2">- Familia Rodriguez</p>
+          </div>
+        </div>
+        
+        <!-- Stats mejorados -->
+        <div class="mt-8 grid grid-cols-3 gap-4">
+          <div class="bg-white dark:bg-dark-700 p-4 rounded-lg shadow text-center border border-gray-200 dark:border-dark-600">
+            <div class="text-3xl font-bold text-yellow-500 mb-1">150+</div>
+            <div class="text-sm text-gray-600 dark:text-gray-300">Proyectos Completados</div>
+          </div>
+          <div class="bg-white dark:bg-dark-700 p-4 rounded-lg shadow text-center border border-gray-200 dark:border-dark-600">
+            <div class="text-3xl font-bold text-yellow-500 mb-1">10+</div>
+            <div class="text-sm text-gray-600 dark:text-gray-300">Años de Experiencia</div>
+          </div>
+          <div class="bg-white dark:bg-dark-700 p-4 rounded-lg shadow text-center border border-gray-200 dark:border-dark-600">
+            <div class="text-3xl font-bold text-yellow-500 mb-1">98%</div>
+            <div class="text-sm text-gray-600 dark:text-gray-300">Clientes Satisfechos</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Testimonio destacado -->
+    <div class="mt-16 bg-gray-50 dark:bg-dark-700 rounded-xl p-8 border border-gray-200 dark:border-dark-600 relative overflow-hidden">
+      <div class="absolute -left-20 -top-20 w-64 h-64 rounded-full bg-yellow-100/30 dark:bg-yellow-900/20 blur-xl"></div>
+      <div class="relative z-10">
+        <div class="flex items-center mb-6">
+          <img src="/images/usuario.png" alt="John K." class="w-16 h-16 rounded-full border-4 border-yellow-400 object-cover">
+          <div class="ml-4">
+            <h4 class="font-bold text-gray-900 dark:text-white">John K.</h4>
+            <p class="text-yellow-500 dark:text-yellow-400 text-sm">Cliente desde 2015</p>
+          </div>
+        </div>
+        <blockquote class="text-lg italic text-gray-700 dark:text-gray-300 pl-4 border-l-4 border-yellow-400">
+          "ACT Construction transformó completamente nuestra propiedad. Su atención al detalle y compromiso con la calidad superó todas nuestras expectativas."
+        </blockquote>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================== -->
+<!-- Estilos CSS                                    -->
+<!-- ============================================== -->
 <style is:global>
-  /* Animaciones idénticas a la sección de servicios */
+  /* Animaciones para ambas versiones */
   @keyframes float1 {
     0%, 100% { transform: translateY(0) translateX(0); }
     50% { transform: translateY(-20px) translateX(10px); }
@@ -63,7 +205,39 @@ import StatsSeccion from './StatsSeccion.astro';
     0%, 100% { transform: translateY(0) translateX(0); }
     50% { transform: translateY(-10px) translateX(-5px); }
   }
-  .animate-float1 { animation: float1 8s ease-in-out infinite; }
-  .animate-float2 { animation: float2 10s ease-in-out infinite; }
-  .animate-float3 { animation: float3 12s ease-in-out infinite; }
+  .animate-float1 { 
+    animation: float1 8s ease-in-out infinite;
+    filter: drop-shadow(0 5px 5px rgba(234, 179, 8, 0.3));
+  }
+  .animate-float2 { 
+    animation: float2 10s ease-in-out infinite;
+    filter: drop-shadow(0 5px 5px rgba(234, 179, 8, 0.3));
+  }
+  .animate-float3 { 
+    animation: float3 12s ease-in-out infinite;
+    filter: drop-shadow(0 5px 5px rgba(234, 179, 8, 0.3));
+  }
+
+  /* Asegurar que solo aplique en móvil */
+  @media (max-width: 1023px) {
+    #about-desktop {
+      display: none !important;
+    }
+    #about-mobile {
+      display: block !important;
+    }
+  }
+  @media (min-width: 1024px) {
+    #about-mobile {
+      display: none !important;
+    }
+    #about-desktop {
+      display: block !important;
+    }
+  }
+
+  /* Transiciones suaves */
+  #about-mobile *, #about-desktop * {
+    transition: all 0.3s ease;
+  }
 </style>

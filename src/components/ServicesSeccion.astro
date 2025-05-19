@@ -1,8 +1,9 @@
 ---
 import { Construction, Hammer, LandPlot, Droplet, ArrowDownWideNarrow } from "lucide-react";
+
 ---
-<section class="relative z-50 py-16 md:py-24 bg-white dark:bg-dark-800">
-  <!-- Fondo sólido para cubrir cualquier fondo detrás del video o elementos fixed -->
+
+<section class="relative z-10 py-16 md:py-24 bg-white dark:bg-dark-800" id="services">
   <div class="absolute inset-0 bg-white dark:bg-dark-800 z-[-1]"></div>
 
   <div class="container mx-auto px-4 sm:px-6 lg:px-8">
@@ -11,118 +12,131 @@ import { Construction, Hammer, LandPlot, Droplet, ArrowDownWideNarrow } from "lu
         WHAT WE OFFER
       </span>
       <h2 class="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 dark:text-white mb-4">
-        Nuestros <span class="text-yellow-500 dark:text-yellow-400">Servicios</span>
+        Our <span class="text-yellow-500 dark:text-yellow-400">Services</span>
       </h2>
       <div class="mx-auto w-20 md:w-24 h-1.5 bg-gradient-to-r from-yellow-400 to-yellow-600 dark:from-yellow-500 dark:to-yellow-400 rounded-full"></div>
     </div>
 
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
-      
-      <!-- Servicio 1 -->
+      <!-- Service 1: Excavation -->
       <div class="group bg-white dark:bg-dark-700 p-6 md:p-8 rounded-xl md:rounded-2xl shadow-lg md:shadow-xl hover:shadow-2xl transition-all duration-300 border border-gray-200 dark:border-dark-600 hover:border-yellow-400 dark:hover:border-yellow-500">
         <div class="flex items-center mb-4 md:mb-6">
           <div class="p-2 md:p-3 rounded-md md:rounded-lg bg-yellow-50 dark:bg-yellow-900/20 group-hover:bg-yellow-100 dark:group-hover:bg-yellow-900/30 transition-colors duration-300">
             <Construction className="w-6 h-6 md:w-8 md:h-8 text-yellow-500 dark:text-yellow-400" />
           </div>
-          <h3 class="text-xl md:text-2xl font-bold text-gray-800 dark:text-white ml-3 md:ml-4">Excavación</h3>
+          <h3 class="text-xl md:text-2xl font-bold text-gray-800 dark:text-white ml-3 md:ml-4">Excavation</h3>
         </div>
         <p class="text-sm md:text-base text-gray-600 dark:text-gray-300 mb-4 md:mb-6">
-          Preparación precisa de terrenos para proyectos residenciales y comerciales con maquinaria de última generación.
+          Precise land preparation for residential and commercial projects using state-of-the-art machinery.
         </p>
         <div class="flex justify-end">
-          <span class="inline-flex items-center text-sm md:text-base text-yellow-500 dark:text-yellow-400 font-medium">
-            Saber más
+          <a 
+            href="/services/excavation" 
+            class="inline-flex items-center text-sm md:text-base text-yellow-500 dark:text-yellow-400 font-medium hover:text-yellow-600 dark:hover:text-yellow-300 transition-colors"
+          >
+            Learn more
             <svg class="w-3 h-3 md:w-4 md:h-4 ml-1 transition-transform group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
             </svg>
-          </span>
+          </a>
         </div>
       </div>
 
-      <!-- Servicio 2 -->
+      <!-- Service 2: Demolition -->
       <div class="group bg-white dark:bg-dark-700 p-6 md:p-8 rounded-xl md:rounded-2xl shadow-lg md:shadow-xl hover:shadow-2xl transition-all duration-300 border border-gray-200 dark:border-dark-600 hover:border-yellow-400 dark:hover:border-yellow-500">
         <div class="flex items-center mb-4 md:mb-6">
           <div class="p-2 md:p-3 rounded-md md:rounded-lg bg-yellow-50 dark:bg-yellow-900/20 group-hover:bg-yellow-100 dark:group-hover:bg-yellow-900/30 transition-colors duration-300">
             <Hammer className="w-6 h-6 md:w-8 md:h-8 text-yellow-500 dark:text-yellow-400" />
           </div>
-          <h3 class="text-xl md:text-2xl font-bold text-gray-800 dark:text-white ml-3 md:ml-4">Demolición</h3>
+          <h3 class="text-xl md:text-2xl font-bold text-gray-800 dark:text-white ml-3 md:ml-4">Demolition</h3>
         </div>
         <p class="text-sm md:text-base text-gray-600 dark:text-gray-300 mb-4 md:mb-6">
-          Eliminación segura y eficiente de estructuras existentes con técnicas especializadas.
+          Safe and efficient removal of existing structures using specialized techniques.
         </p>
         <div class="flex justify-end">
-          <span class="inline-flex items-center text-sm md:text-base text-yellow-500 dark:text-yellow-400 font-medium">
-            Saber más
+          <a 
+            href="/services/demolition" 
+            class="inline-flex items-center text-sm md:text-base text-yellow-500 dark:text-yellow-400 font-medium hover:text-yellow-600 dark:hover:text-yellow-300 transition-colors"
+          >
+            Learn more
             <svg class="w-3 h-3 md:w-4 md:h-4 ml-1 transition-transform group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
             </svg>
-          </span>
+          </a>
         </div>
       </div>
 
-      <!-- Servicio 3 -->
+      <!-- Service 3: Trenching -->
       <div class="group bg-white dark:bg-dark-700 p-6 md:p-8 rounded-xl md:rounded-2xl shadow-lg md:shadow-xl hover:shadow-2xl transition-all duration-300 border border-gray-200 dark:border-dark-600 hover:border-yellow-400 dark:hover:border-yellow-500">
         <div class="flex items-center mb-4 md:mb-6">
           <div class="p-2 md:p-3 rounded-md md:rounded-lg bg-yellow-50 dark:bg-yellow-900/20 group-hover:bg-yellow-100 dark:group-hover:bg-yellow-900/30 transition-colors duration-300">
             <ArrowDownWideNarrow className="w-6 h-6 md:w-8 md:h-8 text-yellow-500 dark:text-yellow-400" />
           </div>
-          <h3 class="text-xl md:text-2xl font-bold text-gray-800 dark:text-white ml-3 md:ml-4">Zanjeo</h3>
+          <h3 class="text-xl md:text-2xl font-bold text-gray-800 dark:text-white ml-3 md:ml-4">Trenching</h3>
         </div>
         <p class="text-sm md:text-base text-gray-600 dark:text-gray-300 mb-4 md:mb-6">
-          Soluciones profesionales para sistemas de drenaje y servicios públicos subterráneos.
+          Professional solutions for drainage systems and underground utilities.
         </p>
         <div class="flex justify-end">
-          <span class="inline-flex items-center text-sm md:text-base text-yellow-500 dark:text-yellow-400 font-medium">
-            Saber más
+          <a 
+            href="/services/trenching" 
+            class="inline-flex items-center text-sm md:text-base text-yellow-500 dark:text-yellow-400 font-medium hover:text-yellow-600 dark:hover:text-yellow-300 transition-colors"
+          >
+            Learn more
             <svg class="w-3 h-3 md:w-4 md:h-4 ml-1 transition-transform group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
             </svg>
-          </span>
+          </a>
         </div>
       </div>
 
-      <!-- Servicio 4 -->
+      <!-- Service 4: Land Clearing -->
       <div class="group bg-white dark:bg-dark-700 p-6 md:p-8 rounded-xl md:rounded-2xl shadow-lg md:shadow-xl hover:shadow-2xl transition-all duration-300 border border-gray-200 dark:border-dark-600 hover:border-yellow-400 dark:hover:border-yellow-500 lg:col-start-1">
         <div class="flex items-center mb-4 md:mb-6">
           <div class="p-2 md:p-3 rounded-md md:rounded-lg bg-yellow-50 dark:bg-yellow-900/20 group-hover:bg-yellow-100 dark:group-hover:bg-yellow-900/30 transition-colors duration-300">
             <LandPlot className="w-6 h-6 md:w-8 md:h-8 text-yellow-500 dark:text-yellow-400" />
           </div>
-          <h3 class="text-xl md:text-2xl font-bold text-gray-800 dark:text-white ml-3 md:ml-4">Limpieza de Terrenos</h3>
+          <h3 class="text-xl md:text-2xl font-bold text-gray-800 dark:text-white ml-3 md:ml-4">Land Clearing</h3>
         </div>
         <p class="text-sm md:text-base text-gray-600 dark:text-gray-300 mb-4 md:mb-6">
-          Preparación integral de terrenos para nuevos proyectos de construcción.
+          Comprehensive site preparation for new construction projects.
         </p>
         <div class="flex justify-end">
-          <span class="inline-flex items-center text-sm md:text-base text-yellow-500 dark:text-yellow-400 font-medium">
-            Saber más
+          <a 
+            href="/services/land-clearing" 
+            class="inline-flex items-center text-sm md:text-base text-yellow-500 dark:text-yellow-400 font-medium hover:text-yellow-600 dark:hover:text-yellow-300 transition-colors"
+          >
+            Learn more
             <svg class="w-3 h-3 md:w-4 md:h-4 ml-1 transition-transform group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
             </svg>
-          </span>
+          </a>
         </div>
       </div>
 
-      <!-- Servicio 5 -->
+      <!-- Service 5: Water Supply -->
       <div class="group bg-white dark:bg-dark-700 p-6 md:p-8 rounded-xl md:rounded-2xl shadow-lg md:shadow-xl hover:shadow-2xl transition-all duration-300 border border-gray-200 dark:border-dark-600 hover:border-yellow-400 dark:hover:border-yellow-500 lg:col-start-2">
         <div class="flex items-center mb-4 md:mb-6">
           <div class="p-2 md:p-3 rounded-md md:rounded-lg bg-yellow-50 dark:bg-yellow-900/20 group-hover:bg-yellow-100 dark:group-hover:bg-yellow-900/30 transition-colors duration-300">
             <Droplet className="w-6 h-6 md:w-8 md:h-8 text-yellow-500 dark:text-yellow-400" />
           </div>
-          <h3 class="text-xl md:text-2xl font-bold text-gray-800 dark:text-white ml-3 md:ml-4">Suministro de Agua</h3>
+          <h3 class="text-xl md:text-2xl font-bold text-gray-800 dark:text-white ml-3 md:ml-4">Water Supply</h3>
         </div>
         <p class="text-sm md:text-base text-gray-600 dark:text-gray-300 mb-4 md:mb-6">
-          Acceso eficiente y confiable a recursos hídricos para necesidades urbanas y rurales.
+          Efficient and reliable access to water resources for urban and rural needs.
         </p>
         <div class="flex justify-end">
-          <span class="inline-flex items-center text-sm md:text-base text-yellow-500 dark:text-yellow-400 font-medium">
-            Saber más
+          <a 
+            href="/services/water-supply" 
+            class="inline-flex items-center text-sm md:text-base text-yellow-500 dark:text-yellow-400 font-medium hover:text-yellow-600 dark:hover:text-yellow-300 transition-colors"
+          >
+            Learn more
             <svg class="w-3 h-3 md:w-4 md:h-4 ml-1 transition-transform group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
             </svg>
-          </span>
+          </a>
         </div>
       </div>
-
     </div>
   </div>
 </section>
