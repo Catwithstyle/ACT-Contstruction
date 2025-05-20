@@ -10,57 +10,52 @@ export interface Project {
     value: string;
     label: string;
   }>;
+  gallery?: string[];
 }
 
 export const projects: Project[] = [
   {
     id: 1,
-    title: "Proyecto de Limpieza de Terreno",
-    description: "Preparación de terreno para construcción comercial",
+    title: "Residential Land Clearing",
+    description: "Complete land clearing for residential development",
     image: "/images/maquina1.webp",
-    alt: "Terreno antes y después de la limpieza",
-    details: "Se utilizó maquinaria pesada para remover escombros y nivelar el terreno.",
+    alt: "Excavation equipment working",
+    details: "Este proyecto incluyó desmonte completo para desarrollo residencial...",
     stats: [
       { value: "2,500 m²", label: "Área limpiada" },
       { value: "3 días", label: "Tiempo de ejecución" },
       { value: "15 ton", label: "Escombros removidos" },
       { value: "100%", label: "Satisfacción del cliente" }
-    ]
+    ],
+    gallery: ["/images/maquina1.webp", "/images/maquina1.webp"]
   },
   {
     id: 2,
-    title: "Desmonte de Área Industrial",
-    description: "Limpieza de antigua fábrica para remodelación",
+    title: "Commercial Excavation",
+    description: "Precision excavation for commercial building",
     image: "/images/maquina1.webp",
-    alt: "Área industrial antes y después del desmonte",
+    alt: "Commercial construction site",
+    details: "Excavación de precisión para edificio comercial de 10 pisos...",
     stats: [
       { value: "5,000 m²", label: "Área trabajada" },
       { value: "1 semana", label: "Tiempo de ejecución" }
-    ]
+    ],
+    gallery: ["/images/maquina1.webp"]
   },
-
   {
     id: 3,
-    title: "Desmonte de Área Industrial",
-    description: "Limpieza de antigua fábrica para remodelación",
+    title: "Water Delivery",
+    description: "Non-potable water for agriculture",
     image: "/images/maquina1.webp",
-    alt: "Área industrial antes y después del desmonte",
-    stats: [
-      { value: "5,000 m²", label: "Área trabajada" },
-      { value: "1 semana", label: "Tiempo de ejecución" }
-    ]
+    alt: "Water delivery truck",
+    details: "Suministro de agua no potable para agricultura en áreas rurales..."
   },
   {
     id: 4,
-    title: "Desmonte de Área Industrial",
-    description: "Limpieza de antigua fábrica para remodelación",
+    title: "Utility Trenching",
+    description: "Trenching for neighborhood utilities",
     image: "/images/maquina1.webp",
-    alt: "Área industrial antes y después del desmonte",
-    stats: [
-      { value: "5,000 m²", label: "Área trabajada" },
-      { value: "1 semana", label: "Tiempo de ejecución" }
-    ]
+    alt: "Underground utility work",
+    details: "Zanjeado para instalación de servicios públicos en vecindario..."
   }
-  // Más proyectos según sea necesario
 ];
-

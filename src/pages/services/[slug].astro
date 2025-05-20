@@ -1,5 +1,4 @@
 ---
-// src/pages/services/[slug].astro
 import Layout from "../../layouts/Layout.astro";
 import { services } from "../../data/services";
 import { ArrowLeft } from "lucide-react";
@@ -21,91 +20,131 @@ if (!service) {
 
 <Layout title={`${service.title} | Our Services`}>
   <style is:inline>
-    .animate-fadein {
-      animation: fadeIn 0.5s ease-out forwards;
+    .service-header {
+      background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url("/images/maquina1.webp");
+      background-size: cover;
+      background-position: center;
     }
-    @keyframes fadeIn {
-      from { opacity: 0; }
-      to { opacity: 1; }
+    .feature-icon {
+      transition: all 0.3s ease;
+    }
+    .feature-card:hover .feature-icon {
+      transform: translateY(-5px) scale(1.05);
     }
   </style>
 
-  <main class="bg-white dark:bg-dark-800 min-h-screen animate-fadein">
-    <div class="container mx-auto px-4 sm:px-6 lg:px-8 py-16 md:py-24">
-      <a
-        href="/#services"
+  <main class="text-gray-800 dark:text-gray-200">
+    <!-- Hero Header -->
+    <div class="service-header text-white py-20 md:py-28 lg:py-32 px-4">
+      <div class="max-w-6xl mx-auto">
+         <a
+        href="/#projects"
+        onclick="window.close(); window.location.href='/'; return false;"
         class="inline-flex items-center text-yellow-600 dark:text-yellow-400 hover:text-yellow-700 dark:hover:text-yellow-300 mb-8 transition-colors"
       >
         <ArrowLeft className="w-5 h-5 mr-2" />
-        Back to Services
+        Back to Projects
       </a>
+        <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold mb-4">{service.title}</h1>
+        <p class="text-xl md:text-2xl max-w-3xl">{service.description}</p>
+      </div>
+    </div>
 
-      <article class="group bg-white dark:bg-dark-700 p-8 rounded-2xl shadow-xl hover:shadow-2xl transition-all duration-300 border border-gray-200 dark:border-dark-600 hover:border-yellow-400 dark:hover:border-yellow-500">
-        <div class="flex items-center mb-6">
-          <div class="p-3 rounded-lg bg-yellow-50 dark:bg-yellow-900/20 group-hover:bg-yellow-100 dark:group-hover:bg-yellow-900/30 transition-colors duration-300">
-            <service.icon className="w-8 h-8 text-yellow-500 dark:text-yellow-400" />
-          </div>
-          <h1 class="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white ml-4">
-            {service.title}
-          </h1>
+    <!-- Service Details -->
+    <div class="max-w-6xl mx-auto px-4 py-12 md:py-16">
+      <div class="grid md:grid-cols-3 gap-8">
+        <!-- Main Content -->
+        <div class="md:col-span-2">
+          <h2 class="text-3xl font-bold mb-6">Service Details</h2>
+          <p class="text-lg mb-8">{service.details}</p>
+
+          {
+            service.processSteps && (
+              <div class="mb-12">
+                <h3 class="text-2xl font-bold mb-6">Our Process</h3>
+                <div class="space-y-8">
+                  {service.processSteps.map((step, index) => (
+                    <div class="flex">
+                      <div class="flex flex-col items-center mr-6">
+                        <div class="w-10 h-10 rounded-full bg-yellow-500 text-white flex items-center justify-center font-bold">
+                          {index + 1}
+                        </div>
+                        {index < (service.processSteps?.length ?? 0) - 1 && (
+                          <div class="w-px h-full bg-gray-300 dark:bg-gray-600" />
+                        )}
+                      </div>
+                      <div class="pb-8">
+                        <h4 class="text-xl font-semibold mb-2">{step.title}</h4>
+                        <p>{step.description}</p>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            )
+          }
         </div>
 
-        <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
-          <div>
-            <img
-              src={service.image}
-              alt={service.alt}
-              class="w-full h-auto rounded-xl shadow-lg"
-              loading="eager"
-            />
-          </div>
-
-          <div>
-            <p class="text-lg text-yellow-600 dark:text-yellow-400 mb-6">
-              {service.description}
-            </p>
-
-            {service.features && (
-              <div class="mb-8">
-                <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-5">Service Features</h3>
+        <!-- Sidebar -->
+        <div class="space-y-8">
+          {
+            service.features && (
+              <div class="bg-gray-50 dark:bg-gray-800 p-6 rounded-xl">
+                <h3 class="text-xl font-bold mb-4">Key Features</h3>
                 <ul class="space-y-3">
-                  {service.features.map((feature) => (
+                  {service.features.map(feature => (
                     <li class="flex items-start">
-                      <svg class="w-5 h-5 text-green-500 mt-0.5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                      <svg
+                        class="w-5 h-5 text-yellow-500 mr-2 mt-0.5 flex-shrink-0"
+                        fill="none"
+                        stroke="currentColor"
+                        viewBox="0 0 24 24"
+                      >
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
                       </svg>
                       {feature}
                     </li>
                   ))}
                 </ul>
               </div>
-            )}
-          </div>
-        </div>
+            )
+          }
 
-        {service.stats && (
-          <div class="mt-8">
-            <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-5">Service Statistics</h3>
-            <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
-              {service.stats.map((stat) => (
-                <div class="bg-gray-50 dark:bg-dark-600 p-4 rounded-lg text-center border border-gray-200 dark:border-dark-500">
-                  <div class="text-yellow-600 dark:text-yellow-400 text-2xl font-bold mb-1">{stat.value}</div>
-                  <div class="text-gray-600 dark:text-gray-400 text-sm">{stat.label}</div>
+          {
+            service.stats && (
+              <div class="bg-gray-50 dark:bg-gray-800 p-6 rounded-xl">
+                <h3 class="text-xl font-bold mb-4">By The Numbers</h3>
+                <div class="grid grid-cols-2 gap-4">
+                  {service.stats.map(stat => (
+                    <div class="bg-white dark:bg-gray-700 p-3 rounded-lg text-center">
+                      <div class="text-2xl font-bold text-yellow-600 dark:text-yellow-400 mb-1">{stat.value}</div>
+                      <div class="text-sm text-gray-600 dark:text-gray-300">{stat.label}</div>
+                    </div>
+                  ))}
                 </div>
+              </div>
+            )
+          }
+        </div>
+      </div>
+
+      {
+        service.gallery && service.gallery.length > 0 && (
+          <div class="mt-16">
+            <h3 class="text-2xl font-bold mb-8">Project Gallery</h3>
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+              {service.gallery.map(image => (
+                <img
+                  src={image}
+                  alt={`${service.title} example`}
+                  class="w-full h-64 object-cover rounded-lg shadow-md hover:shadow-lg transition-shadow"
+                  loading="lazy"
+                />
               ))}
             </div>
           </div>
-        )}
-
-        {service.details && (
-          <div class="mt-8 bg-gray-50 dark:bg-dark-600 p-6 rounded-lg">
-            <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-4">Detailed Information</h3>
-            <p class="text-gray-700 dark:text-gray-300">
-              {service.details}
-            </p>
-          </div>
-        )}
-      </article>
+        )
+      }
     </div>
   </main>
 </Layout>

@@ -1,150 +1,182 @@
 ---
 import { User, Mail, Phone } from "lucide-react";
 
-const { header1, icon, title, title2, subTitle, paragraph, link,link2, tipo } = Astro.props;
+const { header1, icon, title, title2, subTitle, paragraph, link, link2, tipo } = Astro.props;
 ---
 
-<div class="max-w-none bg-light-100 dark:bg-dark-800 rounded-xl mx-auto overflow-hidden flex flex-col items-center 
+<div
+  class="w-full max-w-full sm:max-w-[620px] md:max-w-[740px] lg:max-w-[880px] xl:max-w-[960px] 2xl:max-w-[1080px] 3xl:max-w-[1280px] bg-light-100 dark:bg-dark-800 rounded-xl mx-auto overflow-hidden flex flex-col items-center
     border-l-4 border-yellow-500 dark:border-yellow-500
-    shadow-[0_10px_25px_-5px_rgba(202,138,4,0.3)] dark:shadow-[0_10px_25px_-5px_rgba(255,127,17,0.4)]
-    relative before:absolute before:inset-0 before:bg-gradient-to-b before:from-transparent before:to-black/5 dark:before:to-white/5 before:opacity-0 hover:before:opacity-100 before:transition-opacity before:duration-300
-    transform transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_15px_30px_-5px_rgba(202,138,4,0.4)] dark:hover:shadow-[0_15px_30px_-5px_rgba(255,127,17,0.5)]
-    group hover:z-10
-    w-full min-h-[400px] md:h-[500px]">
+    shadow-[0_15px_30px_-5px_rgba(202,138,4,0.4)] dark:shadow-[0_15px_30px_-5px_rgba(255,127,17,0.5)]
+    relative before:absolute before:inset-0 before:bg-gradient-to-b before:from-transparent before:to-black/5 dark:before:to-white/5 before:opacity-100 before:transition-opacity before:duration-300
+    transform transition-all duration-300 translate-y-0 shadow-lg
+    group z-10
+     min-h-[520px] md:min-h-[580px] xl:min-h-[640px]"
+>
+  <div
+    class="absolute inset-0 rounded-xl pointer-events-none
+                border border-yellow-400/20 dark:border-yellow-500/30
+                transition-all duration-300"
+  >
+  </div>
 
-    <!-- Efecto de borde luminoso -->
-    <div class="absolute inset-0 rounded-xl pointer-events-none 
-                border border-transparent group-hover:border-yellow-400/30 dark:group-hover:border-yellow-500/40
-                transition-all duration-300"></div>
+  {
+    tipo === "simple" && (
+      <div class="flex text-left w-full flex-col px-4 sm:px-5 md:px-6 lg:px-8 xl:pl-6 xl:pr-12 2xl:pl-8 2xl:pr-16 3xl:pl-10 3xl:pr-20 py-8 md:pt-[70px]">
+        <div class="md:pl-4 md:pr-20 w-full">
+          <div class="bg-light-100 dark:bg-dark-800 mx-auto overflow-hidden flex flex-col items-start px-4 w-full">
+            <h3 class="text-black dark:text-dark-text text-sm sm:text-base md:text-lg xl:text-xl font-bold uppercase tracking-wider flex items-center pb-3 gap-2 bg-cover bg-clip-border">
+              {icon && (
+                <img src={`/icons/${icon}.svg`} alt="Icono" class="w-8 h-8 md:w-9 md:h-9 dark:filter dark:invert" />
+              )}
+              {header1}
+            </h3>
 
-    <!-- Tipo Simple -->
-    {tipo === "simple" && (
-    <div class="flex text-left w-full flex-col px-4 py-8 md:pt-[70px] md:px-6 md:w-[800px]"> 
-       
-        <div class="md:pl-6 md:pr-20 w-full"> 
-            <div class="bg-light-100 dark:bg-dark-800 mx-auto overflow-hidden flex flex-col items-start text-justify px-4 md:pl-8 w-full">
-                <h3 class="text-black dark:text-dark-text text-sm font-bold uppercase tracking-wider flex items-center pb-3 gap-2 bg-cover bg-clip-border">
-                    {icon && (
-                        <img src={`/icons/${icon}.svg`} alt="Icono" class="w-8 h-8 md:w-10 md:h-10 dark:filter dark:invert" />
-                    )}
-                    {header1}
-                </h3>
+            <h1 class="text-2xl sm:text-4xl md:text-5xl xl:text-6xl font-bold font-oswald text-black dark:text-white uppercase mt-1 pb-3 text-yellow-700 dark:group-hover:text-yellow-500 transition-colors duration-300">
+              {title}
+            </h1>
+            <h2 class="text-sm md:text-lg xl:text-xl text-gray-400 dark:text-gray-300 uppercase font-semibold font-sans">
+              {title2}
+            </h2>
+            <h2 class="text-sm md:text-lg xl:text-xl font-semibold text-yellow-500 dark:text-yellow-500 uppercase font-sans group-hover:scale-105 origin-left transition-transform duration-300">
+              {subTitle}
+            </h2>
+            <p class="text-sm md:text-base xl:text-lg font-normal text-gray-700 dark:text-gray-300 mt-4 font-sans">
+              {paragraph}
+              <br />
+              <br />
+              We specialize in residential and commercial land preparation, offering customized solutions tailored to
+              the unique needs of each project. Our mission is to deliver quality, safety, and sustainability on every
+              job site.
+            </p>
 
-                <h1 class="text-2xl md:text-4xl font-bold font-oswald text-black dark:text-white uppercase mt-1 pb-3 group-hover:text-yellow-600 dark:group-hover:text-yellow-500 transition-colors duration-300">{title}</h1>
-                <h2 class="text-base md:text-lg text-gray-400 dark:text-gray-300 uppercase font-semibold font-sans">{title2}</h2>
-                <h2 class="text-base md:text-lg font-semibold text-yellow-500 dark:text-yellow-500 uppercase font-sans group-hover:scale-105 origin-left transition-transform duration-300">{subTitle}</h2>
-                <p class="text-sm md:text-base font-normal text-gray-700 dark:text-gray-300 mt-2 font-sans">{paragraph}</p>
-
-                <!-- Botones con efecto 3D mejorado -->
-                <div class="flex flex-col sm:flex-row gap-3 mt-4 w-full text-center">
-                    {link && (
-                        <a href={link} class="flex-1 bg-yellow-500 hover:bg-yellow-600 text-white font-sans uppercase text-xs sm:text-sm font-semibold py-2 sm:py-3 px-4 sm:px-5 rounded-lg 
+            <div class="flex flex-col sm:flex-row gap-3 mt-8 w-full text-center">
+              {link && (
+                <a
+                  href={link}
+                  class="flex-1 bg-yellow-500 hover:bg-yellow-600 text-white font-sans uppercase text-xs md:text-sm font-semibold py-3 md:py-4 px-4 md:px-6 rounded-lg 
                             transition-all duration-300 shadow-md hover:shadow-lg 
                             transform hover:-translate-y-0.5 hover:scale-105
                             border border-yellow-600 dark:border-yellow-700
                             relative overflow-hidden
-                            after:absolute after:inset-0 after:bg-gradient-to-b after:from-white/20 after:to-transparent after:opacity-0 hover:after:opacity-100 after:transition-opacity">
-                            View our projects
-                        </a>
-                    )}
-                    {link && (
-                        <a href={link2} class="flex-1 border border-black dark:border-gray-300 text-black dark:text-white text-xs sm:text-sm font-semibold py-2 sm:py-3 px-4 sm:px-5 rounded-lg 
+                            after:absolute after:inset-0 after:bg-gradient-to-b after:from-white/20 after:to-transparent after:opacity-0 hover:after:opacity-100 after:transition-opacity"
+                >
+                  View our projects
+                </a>
+              )}
+              {link && (
+                <a
+                  href={link2}
+                  class="flex-1 border border-black dark:border-gray-300 text-black dark:text-white text-xs md:text-sm font-semibold py-3 md:py-4 px-4 md:px-6 rounded-lg 
                             hover:bg-gray-200 dark:hover:bg-dark-700 transition-all duration-300 
                             flex items-center justify-center
                             shadow-sm hover:shadow-md
-                            transform hover:-translate-y-0.5">
-                            {Phone && <Phone className="w-4 h-4 sm:w-5 sm:h-5 mr-2" />} Contact us
-                        </a>
-                    )}
-                </div>
+                            transform hover:-translate-y-0.5"
+                >
+                  {Phone && <Phone className="w-4 h-4 sm:w-5 sm:h-5 mr-2" />} Contact us
+                </a>
+              )}
             </div>
+          </div>
         </div>
-    </div>
-    )}
+      </div>
+    )
+  }
 
-    <!-- Tipo Formulario -->
-    {tipo === "formulario" && (
-        <div class="bg-light-100 dark:bg-dark-800 p-4 sm:p-6 md:p-8 w-full max-w-[500px] flex flex-col items-center font-sans pt-6 md:pt-[20px] px-4 sm:px-6 md:px-11">
-            <header class="text-center w-full transform group-hover:scale-105 transition-transform duration-500">
-                <h1 class="text-base md:text-lg font-bold text-black dark:text-white uppercase tracking-tight text-left 
-                           bg-clip-text text-transparent bg-gradient-to-r from-yellow-500 to-yellow-600 dark:from-yellow-400 dark:to-yellow-500">
-                    Schedule your free evaluation
-                </h1>
-                <h2 class="text-[10px] md:text-[10px] font-normal text-gray-500 dark:text-gray-400 text-left mt-2">
-                    Complete this form and our team will contact you to schedule a free on-site evaluation of your project.
-                </h2>
-            </header>
+  {
+    tipo === "formulario" && (
+      <div class="bg-light-100 dark:bg-dark-800 p-4 sm:p-6 md:p-8 xl:p-10 2xl:p-12 w-full max-w-md sm:max-w-lg md:max-w-xl xl:max-w-2xl 2xl:max-w-3xl flex flex-col items-center font-sans pt-6 md:pt-[20px] px-4 sm:px-6 md:px-11">
+        <header class="text-center w-full transform group-hover:scale-105 transition-transform duration-500">
+          <h1
+            class="text-lg md:text-xl xl:text-2xl font-bold text-black dark:text-white uppercase tracking-tight text-left 
+                           bg-clip-text text-transparent bg-gradient-to-r from-yellow-500 to-yellow-600 dark:from-yellow-400 dark:to-yellow-500"
+          >
+            Schedule your free evaluation
+          </h1>
+          <h2 class="text-[10px] md:text-xs xl:text-sm font-normal text-gray-500 dark:text-gray-400 text-left mt-2">
+            Complete this form and our team will contact you to schedule a free on-site evaluation of your project.
+          </h2>
+        </header>
 
-            <form action="schedule_form.php" method="POST" class="mt-4 w-full space-y-3 md:space-y-4">
-                <!-- Campo: Nombre -->
-                <div class="relative w-full mb-3 md:mb-4 transform hover:-translate-y-0.5 transition-transform duration-300">
-                    <label for="name" class="block mb-1 md:mb-2 text-left font-bold text-xs dark:text-gray-300">Name</label>
-                    <div class="relative shadow-sm hover:shadow-md rounded-lg transition-shadow duration-300">
-                    <input 
-                        type="text" 
-                        id="name" 
-                        name="name" 
-                        placeholder="Your name" 
-                        required
-                        class="border dark:border-dark-600 dark:bg-dark-700 dark:text-white pl-8 md:pl-10 pr-2 py-2 w-full rounded-lg placeholder:text-xs md:placeholder:text-sm dark:placeholder-gray-400 focus:ring-2 focus:ring-yellow-500 focus:border-transparent focus:outline-none transition-all duration-300" />
-                    <User className="absolute left-2 md:left-3 top-1/2 transform -translate-y-1/2 text-gray-400 dark:text-gray-300 w-4 h-4 md:w-5 md:h-5" />
-                    </div>
-                </div>
+        <form action="schedule_form.php" method="POST" class="mt-4 w-full space-y-3 md:space-y-4">
+          <div class="relative w-full mb-3 md:mb-4 transform hover:-translate-y-0.5 transition-transform duration-300">
+            <label for="name" class="block mb-1 md:mb-2 text-left font-bold text-xs dark:text-gray-300">
+              Name
+            </label>
+            <div class="relative shadow-sm hover:shadow-md rounded-lg transition-shadow duration-300">
+              <input
+                type="text"
+                id="name"
+                name="name"
+                placeholder="Your name"
+                required
+                class="border dark:border-dark-600 dark:bg-dark-700 dark:text-white pl-8 md:pl-10 pr-2 py-2 w-full rounded-lg placeholder:text-xs md:placeholder:text-sm xl:placeholder:text-base dark:placeholder-gray-400 focus:ring-2 focus:ring-yellow-500 focus:border-transparent focus:outline-none transition-all duration-300"
+              />
+              <User className="absolute left-2 md:left-3 top-1/2 transform -translate-y-1/2 text-gray-400 dark:text-gray-300 w-4 h-4 md:w-5 md:h-5" />
+            </div>
+          </div>
 
-                <!-- Campo: Email -->
-                <div class="relative w-full mb-3 md:mb-4 transform hover:-translate-y-0.5 transition-transform duration-300">
-                    <label for="email" class="block mb-1 md:mb-2 text-left font-bold text-xs dark:text-gray-300">Email</label>
-                    <div class="relative shadow-sm hover:shadow-md rounded-lg transition-shadow duration-300">
-                    <input 
-                        type="email" 
-                        id="email" 
-                        name="email" 
-                        placeholder="Your email" 
-                        required
-                        class="border dark:border-dark-600 dark:bg-dark-700 dark:text-white pl-8 md:pl-10 pr-2 py-2 w-full rounded-lg placeholder:text-xs md:placeholder:text-sm dark:placeholder-gray-400 focus:ring-2 focus:ring-yellow-500 focus:border-transparent focus:outline-none transition-all duration-300" />
-                    <Mail className="absolute left-2 md:left-3 top-1/2 transform -translate-y-1/2 text-gray-400 dark:text-gray-300 w-4 h-4 md:w-5 md:h-5" />
-                    </div>
-                </div>
+          <div class="relative w-full mb-3 md:mb-4 transform hover:-translate-y-0.5 transition-transform duration-300">
+            <label for="email" class="block mb-1 md:mb-2 text-left font-bold text-xs dark:text-gray-300">
+              Email
+            </label>
+            <div class="relative shadow-sm hover:shadow-md rounded-lg transition-shadow duration-300">
+              <input
+                type="email"
+                id="email"
+                name="email"
+                placeholder="Your email"
+                required
+                class="border dark:border-dark-600 dark:bg-dark-700 dark:text-white pl-8 md:pl-10 pr-2 py-2 w-full rounded-lg placeholder:text-xs md:placeholder:text-sm xl:placeholder:text-base dark:placeholder-gray-400 focus:ring-2 focus:ring-yellow-500 focus:border-transparent focus:outline-none transition-all duration-300"
+              />
+              <Mail className="absolute left-2 md:left-3 top-1/2 transform -translate-y-1/2 text-gray-400 dark:text-gray-300 w-4 h-4 md:w-5 md:h-5" />
+            </div>
+          </div>
 
-                <!-- Campo: Teléfono -->
-                <div class="relative w-full mb-3 md:mb-4 transform hover:-translate-y-0.5 transition-transform duration-300">
-                    <label for="phone" class="block mb-1 md:mb-2 text-left font-bold text-xs dark:text-gray-300">Phone</label>
-                    <div class="relative shadow-sm hover:shadow-md rounded-lg transition-shadow duration-300">
-                    <input 
-                        type="tel" 
-                        id="phone" 
-                        name="phone" 
-                        placeholder="Your phone" 
-                        required
-                        class="border dark:border-dark-600 dark:bg-dark-700 dark:text-white pl-8 md:pl-10 pr-2 py-2 w-full rounded-lg placeholder:text-xs md:placeholder:text-sm dark:placeholder-gray-400 focus:ring-2 focus:ring-yellow-500 focus:border-transparent focus:outline-none transition-all duration-300" />
-                    <Phone className="absolute left-2 md:left-3 top-1/2 transform -translate-y-1/2 text-gray-400 dark:text-gray-300 w-4 h-4 md:w-5 md:h-5" />
-                    </div>
-                </div>
+          <div class="relative w-full mb-3 md:mb-4 transform hover:-translate-y-0.5 transition-transform duration-300">
+            <label for="phone" class="block mb-1 md:mb-2 text-left font-bold text-xs dark:text-gray-300">
+              Phone
+            </label>
+            <div class="relative shadow-sm hover:shadow-md rounded-lg transition-shadow duration-300">
+              <input
+                type="tel"
+                id="phone"
+                name="phone"
+                placeholder="Your phone"
+                required
+                class="border dark:border-dark-600 dark:bg-dark-700 dark:text-white pl-8 md:pl-10 pr-2 py-2 w-full rounded-lg placeholder:text-xs md:placeholder:text-sm xl:placeholder:text-base dark:placeholder-gray-400 focus:ring-2 focus:ring-yellow-500 focus:border-transparent focus:outline-none transition-all duration-300"
+              />
+              <Phone className="absolute left-2 md:left-3 top-1/2 transform -translate-y-1/2 text-gray-400 dark:text-gray-300 w-4 h-4 md:w-5 md:h-5" />
+            </div>
+          </div>
 
-                <!-- Campo: Tipo de proyecto -->
-                <div class="transform hover:-translate-y-0.5 transition-transform duration-300">
-                    <label for="project_type" class="block mb-1 md:mb-2 text-xs text-left font-bold dark:text-gray-300">Tipo de Proyecto</label>
-                    <select 
-                    id="project_type" 
-                    name="project_type" 
-                    required
-                    class="border dark:border-dark-600 dark:bg-dark-700 dark:text-white p-2 mb-3 md:mb-4 w-full rounded-lg shadow-sm hover:shadow-md focus:ring-2 focus:ring-yellow-500 focus:border-transparent focus:outline-none transition-all duration-300 text-xs md:text-sm">
-                    <option value="">Select a project type.</option>
-                    <option value="excavation">Excavation</option>
-                    <option value="demolition">Demolition</option>
-                    <option value="trenching">Trenching</option>
-                    <option value="landClearing">Land Clearing</option>
-                    <option value="waterSupply">Water Supply</option>
-                    </select>
-                </div>
+          <div class="transform hover:-translate-y-0.5 transition-transform duration-300">
+            <label for="project_type" class="block mb-1 md:mb-2 text-xs text-left font-bold dark:text-gray-300">
+              Tipo de Proyecto
+            </label>
+            <select
+              id="project_type"
+              name="project_type"
+              required
+              class="border dark:border-dark-600 dark:bg-dark-700 dark:text-white p-2 mb-3 md:mb-4 w-full rounded-lg shadow-sm hover:shadow-md focus:ring-2 focus:ring-yellow-500 focus:border-transparent focus:outline-none transition-all duration-300 text-xs md:text-sm xl:text-base"
+            >
+              <option value="">Select a project type.</option>
+              <option value="excavation">Excavation</option>
+              <option value="demolition">Demolition</option>
+              <option value="trenching">Trenching</option>
+              <option value="landClearing">Land Clearing</option>
+              <option value="waterSupply">Water Supply</option>
+            </select>
+          </div>
 
-                <!-- Botón -->
-                <button 
-                    type="submit" 
-                    class="w-full bg-yellow-500 hover:bg-yellow-600 text-white p-2 md:p-3 rounded-lg font-bold transform hover:-translate-y-0.5 hover:shadow-lg active:translate-y-0 transition-all duration-300 border border-yellow-600 dark:border-yellow-700 shadow-md relative overflow-hidden after:absolute after:inset-0 after:bg-gradient-to-b after:from-white/30 after:to-transparent after:opacity-0 hover:after:opacity-100 after:transition-opacity text-sm md:text-base">
-                    Schedule it now
-                </button>
+          <button
+            type="submit"
+            class="w-full mt-4 bg-yellow-500 hover:bg-yellow-600 text-white p-2 md:p-3 rounded-lg font-bold transform hover:-translate-y-0.5 hover:shadow-lg active:translate-y-0 transition-all duration-300 border border-yellow-600 dark:border-yellow-700 shadow-md relative overflow-hidden after:absolute after:inset-0 after:bg-gradient-to-b after:from-white/30 after:to-transparent after:opacity-0 hover:after:opacity-100 after:transition-opacity text-sm md:text-base xl:text-lg"
+          >
+            Schedule it now
+          </button>
         </form>
-        </div>
-    )}
+      </div>
+    )
+  }
 </div>
