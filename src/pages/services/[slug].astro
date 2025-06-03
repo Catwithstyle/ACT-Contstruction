@@ -21,7 +21,7 @@ if (!service) {
 <Layout title={`${service.title} | Our Services`}>
   <style is:inline>
     .service-header {
-      background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url("/images/maquina1.webp");
+      background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url("${service.image}");
       background-size: cover;
       background-position: center;
     }
@@ -35,16 +35,24 @@ if (!service) {
 
   <main class="text-gray-800 dark:text-gray-200">
     <!-- Hero Header -->
-    <div class="service-header text-white py-20 md:py-28 lg:py-32 px-4">
-      <div class="max-w-6xl mx-auto">
-         <a
-        href="/#projects"
-        onclick="window.close(); window.location.href='/'; return false;"
-        class="inline-flex items-center text-yellow-600 dark:text-yellow-400 hover:text-yellow-700 dark:hover:text-yellow-300 mb-8 transition-colors"
-      >
-        <ArrowLeft className="w-5 h-5 mr-2" />
-        Back to Projects
-      </a>
+    <div
+      class="relative text-white py-20 md:py-28 lg:py-32 px-4"
+      style={`
+      background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('${service.image}');
+      background-size: cover;
+      background-position: center;
+      min-height: 400px;
+    `}
+    >
+      <div class="max-w-6xl mx-auto relative z-10">
+        <a
+          href="/#projects"
+          onclick="window.close(); window.location.href='/'; return false;"
+          class="inline-flex items-center text-yellow-600 dark:text-yellow-400 hover:text-yellow-700 dark:hover:text-yellow-300 mb-8 transition-colors"
+        >
+          <ArrowLeft className="w-5 h-5 mr-2" />
+          Back to Projects
+        </a>
         <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold mb-4">{service.title}</h1>
         <p class="text-xl md:text-2xl max-w-3xl">{service.description}</p>
       </div>
